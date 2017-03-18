@@ -10,4 +10,5 @@ tts/
 plex.conf
 nest.conf
 phue.conf
+webostv.conf
 venv/
