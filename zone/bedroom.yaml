@@ -1,5 +1,0 @@
-- name: 'Bedroom'
-  latitude: !secret home_latitude
-  longitude: !secret home_longitude
-  radius: 3
-  passive: true
