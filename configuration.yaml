@@ -75,8 +75,8 @@ device_tracker:
   - platform: owntracks
     max_gps_accuracy: 200
     consider_home: 0:10
-  - platform: bluetooth_tracker
-    track_new_devices: yes
+  # - platform: bluetooth_tracker
+  #   track_new_devices: yes
 
 nest:
   client_id: !secret nest_client_id
