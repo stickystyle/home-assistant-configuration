@@ -1,0 +1,13 @@
+# Home Assistant
+.HA_VERSION
+deps/
+secrets.yaml
+html5_push_registrations.conf
+known_devices.yaml
+home-assistant.log
+.uuid
+tts/
+plex.conf
+nest.conf
+phue.conf
+venv/

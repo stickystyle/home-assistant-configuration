@@ -1,0 +1,12 @@
+- alias: All lights off when gone
+  trigger:
+    platform: state
+    entity_id: group.two_of_us
+    from: 'home'
+    to: 'not_home'
+    for:
+      minutes: 45
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: group.all_lights

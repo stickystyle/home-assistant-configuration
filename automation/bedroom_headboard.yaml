@@ -1,0 +1,17 @@
+- alias: Bedroom headboard on when home in evening
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 3.5
+  condition:
+    condition: state
+    entity_id: group.two_of_us
+    state: home
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.headboard
+        brightness: 255
+        color_temp: 500
+        rgb_color: [116,77,25]

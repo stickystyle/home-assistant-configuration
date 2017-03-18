@@ -1,0 +1,17 @@
+- platform: darksky
+  api_key: !secret darksky_api_key
+  monitored_conditions:
+    - precip_probability
+    - apparent_temperature
+    - apparent_temperature_max
+    - apparent_temperature_min
+- platform: mqtt
+  name: 'Bedroom Temperature'
+  unit_of_measurement: '°F'
+  state_topic: 'bedroom/sensor1'
+  value_template: "{{ ((float(value_json.temperature) * 9 / 5 )  +  32) | round(1) }}"
+- platform: mqtt
+  name: 'Bedroom Humidity'
+  unit_of_measurement: '%'
+  state_topic: 'bedroom/sensor1'
+  value_template: '{{ value_json.humidity }}'

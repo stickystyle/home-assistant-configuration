@@ -1,0 +1,10 @@
+sensor.entryway_thermostat_hvac_state:
+  hidden: true
+sensor.entryway_thermostat_operation_mode:
+  hidden: true
+sensor.entryway_thermostat_temperature:
+  hidden: true
+sensor.entryway_thermostat_humidity:
+  hidden: true
+sensor.entryway_thermostat_target:
+  hidden: true

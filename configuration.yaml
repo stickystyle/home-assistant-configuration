@@ -1,0 +1,102 @@
+homeassistant:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  unit_system: imperial
+  time_zone: America/New_York
+  customize: !include_dir_merge_named customize
+  packages: !include_dir_named packages
+
+frontend:
+
+http:
+
+updater:
+
+history:
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - updater
+      - script
+      - scene
+      - camera
+    entities:
+      - sensor.dark_sky_daily_high_apparent_temperature
+      - sensor.dark_sky_daily_low_apparent_temperature
+      - light.huebedroom
+      - group.living_room_motion_detection
+      - group.all_switches
+      - camera.living_room_cam
+      - input_boolean.media_select_directv
+      - sun.sun
+
+recorder:
+  db_url: !secret recorder_db_url
+
+logger:
+  default: warning
+  logs:
+    requests.packages.urllib3.connectionpool: critical
+
+logbook:
+
+sun:
+
+zeroconf:
+
+emulated_hue:
+  type: alexa
+  host_ip: 192.168.10.118
+  expose_by_default: false
+  exposed_domains:
+    - light
+    - group
+    - media_player
+
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  client_id: home-assistant-1
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+
+device_tracker:
+  - platform: nmap_tracker
+    hosts: 192.168.10.1/24
+    track_new_devices: no
+    consider_home: 0:10
+    exclude:
+      - 192.168.10.118
+      - 192.168.10.122
+  - platform: owntracks
+    max_gps_accuracy: 200
+    consider_home: 0:10
+  - platform: bluetooth_tracker
+    track_new_devices: yes
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+
+camera:
+  - platform: mjpeg
+    name: Living Room cam
+    mjpeg_url: http://localhost:8081
+
+automation: !include_dir_merge_list automation
+group: !include_dir_merge_named groups
+input_boolean: !include_dir_merge_named input_boolean
+input_select: !include_dir_merge_named input_select
+light: !include_dir_merge_list light
+media_player: !include_dir_merge_list media_player
+notify: !include_dir_merge_list notify
+scene: !include_dir_merge_list scene
+script: !include_dir_merge_named script
+sensor: !include_dir_merge_list sensor
+shell_command: !include_dir_merge_named shell_command
+switch: !include_dir_merge_list switch
+zone: !include_dir_merge_list zone

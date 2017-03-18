@@ -1,0 +1,33 @@
+wakeup:
+  alias: Wake Up
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.headboard
+        brightness: 1
+    - service: light.turn_on
+      data:
+        entity_id: light.headboard
+        brightness: 255
+        rgb_color: [116,77,25]
+        transition: 900
+    - delay:
+        minutes: 15
+    # Need to use a hue scene because hass
+    # wont do transisstions with the white
+    # bulbs
+    # fan_light_1, fan_light_2 + 15min transistion
+    - service: light.hue_activate_scene
+      data:
+        group_name: "HueBedroom"
+        scene_name: "goodmorning"
+    - delay:
+        minutes: 20
+    - service: switch.turn_on
+      data:
+        entity_id: switch.nightstand
+    - service: light.turn_on
+      data:
+        entity_id: light.bedroom_hallway
+        brightness: 255

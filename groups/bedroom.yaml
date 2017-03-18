@@ -1,0 +1,13 @@
+Bedroom:
+  view: yes
+  entities:
+    - group.bedroom_lights
+    - scene.bedroom_nightlight
+    - sensor.bedroom_temperature
+    - sensor.bedroom_humidity
+bedroom_lights:
+  entities:
+    - light.fan_light
+    - light.headboard
+    - switch.nightstand
+    - light.bedroom_hallway

@@ -1,0 +1,21 @@
+group.weather:
+  emulated_hue: false
+  homebridge_hidden: true
+group.bedroom:
+  homebridge_hidden: true
+  icon: mdi:hotel
+group.bedroom_lights:
+  friendly_name: 'Bedroom Lights'
+  emulated_hue: True
+group.person_ryanparrish:
+  entity_picture: "/local/ryan.png"
+  homebridge_hidden: true
+group.person_christaparrish:
+  entity_picture: "/local/christa.jpg"
+  homebridge_hidden: true
+group.person_tuckerparrish:
+  entity_picture: "/local/tucker.png"
+  homebridge_hidden: true
+group.person_catherineparrish:
+  entity_picture: "/local/catherine.png"
+  homebridge_hidden: true

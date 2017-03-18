@@ -1,0 +1,43 @@
+#Make a package
+- alias: Switch to DirectTV
+  trigger:
+    platform: state
+    entity_id: input_boolean.media_select_directv
+    to: 'on'
+    from: 'off'
+  action:
+    service: script.media_directv_on
+- alias: Manage media_select_directv off
+  trigger:
+    - platform: template
+      value_template: >
+        {%- if is_state_attr('media_player.family_room_tv', 'source', 'DirecTV')
+        and
+        is_state('media_player.family_room_tv', 'playing')
+        and
+        is_state('media_player.directv', 'playing') -%}
+        false
+        {%- else -%}
+        true
+        {%- endif %}
+  action:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.media_select_directv
+- alias: Manage media_select_directv on
+  trigger:
+    - platform: template
+      value_template: >
+        {%- if is_state_attr('media_player.family_room_tv', 'source', 'DirecTV')
+        and
+        is_state('media_player.family_room_tv', 'playing')
+        and
+        is_state('media_player.directv', 'playing') -%}
+        true
+        {%- else -%}
+        false
+        {%- endif %}
+  action:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.media_select_directv

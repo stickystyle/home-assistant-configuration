@@ -1,0 +1,7 @@
+switch.nightstand:
+  icon: mdi:lightbulb
+  friendly_name: "Nightstand"
+  emulated_hue: True
+switch.bedroom_switch:
+  homebridge_hidden: true
+  hidden: true

@@ -1,0 +1,27 @@
+Two of Us:
+  entities:
+    - group.person_ryanparrish
+    - group.person_christaparrish
+Kids:
+  entities:
+    - group.person_catherineparrish
+    - group.person_tuckerparrish
+person_ryanparrish:
+  name: "Ryan"
+  entities:
+    - device_tracker.ryans_iphone
+    - device_tracker.ryanparrish_iphone
+person_catherineparrish:
+  name: "Catherine"
+  entities:
+    - device_tracker.catherineparrish_ipad
+    - device_tracker.catherines_ipad
+person_tuckerparrish:
+  name: "Tucker"
+  entities:
+    - device_tracker.tuckersipadattlocalnet_2
+    - device_tracker.tuckers_ipad
+person_christaparrish:
+  name: "Christa"
+  entities:
+    - device_tracker.christasiphoneattlocalnet

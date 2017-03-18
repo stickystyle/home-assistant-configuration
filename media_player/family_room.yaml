@@ -1,0 +1,8 @@
+- platform: plex
+- platform: webostv
+  name: Family Room TV
+  host: 192.168.10.114
+  mac: 14:C9:13:36:E6:F6
+- platform: directv
+  name: DirecTV
+  host: 192.168.10.20

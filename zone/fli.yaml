@@ -1,0 +1,5 @@
+- name: !secret zone_fli_name
+  latitude: !secret zone_fli_latitude
+  longitude: !secret zone_fli_longitude
+  radius: 100
+  icon: mdi:domain

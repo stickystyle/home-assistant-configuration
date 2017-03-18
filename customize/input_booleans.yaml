@@ -1,0 +1,4 @@
+input_boolean.media_select_directv:
+  emulated_hue: True
+  homebridge_hidden: True
+  emulated_hue_name: 'Direct TV'

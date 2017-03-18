@@ -1,0 +1,11 @@
+default_view:
+  view: yes
+  entities:
+    - group.climate
+    - group.two_of_us
+    - group.kids
+    - media_player.directv
+    - media_player.family_room_tv
+    - camera.living_room_cam
+    - group.living_room_motion_detection
+    - input_boolean.media_select_directv

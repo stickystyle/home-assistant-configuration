@@ -1,0 +1,15 @@
+- alias: 'Wakeup'
+  hide_entity: False
+  trigger:
+    platform: time
+    after: "06:30:00"
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    service: script.wakeup

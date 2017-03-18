@@ -1,0 +1,5 @@
+climate:
+  name: Climate
+  entities:
+    - climate.entryway
+    - sensor.dark_sky_apparent_temperature
