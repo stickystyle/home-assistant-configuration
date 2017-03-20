@@ -6,7 +6,15 @@
     to: 'not_home'
     for:
       minutes: 45
+  condition:
+    condition: state
+    entity_id: group.all_lights
+    state: 'on'
   action:
     - service: light.turn_off
       data:
         entity_id: group.all_lights
+    - service: notify.pushbullet
+      data:
+        title: "Turning off the lights"
+        message: "Nobody was home, so I turned off the lights"
