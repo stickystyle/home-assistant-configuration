@@ -15,3 +15,6 @@
   unit_of_measurement: '%'
   state_topic: 'bedroom/sensor1'
   value_template: '{{ value_json.humidity }}'
+- platform: command_line
+  name: Config changes to be applied
+  command: "/home/homeassistant/.homeassistant/bin/get_pending_commits_sensor.sh"
