@@ -1,0 +1,4 @@
+System:
+  view: yes
+  entities:
+    - sensor.config_changes_to_be_applied
