@@ -32,6 +32,7 @@ history:
       - camera.living_room_cam
       - input_boolean.media_select_directv
       - sun.sun
+      - group.climate
 
 recorder:
   db_url: !secret recorder_db_url
