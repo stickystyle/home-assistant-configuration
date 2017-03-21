@@ -7,5 +7,5 @@ notifications:
     - ryan@stickystyle.net
 install: "pip install homeassistant==0.40.1"
 script:
-  - cp .travis/secrets.yaml .
+  - find . -name "*.yaml" | xargs grep "\!secret"| awk '{print $4": 25"}' > secrets.yaml
   - hass --script check_config -c .
