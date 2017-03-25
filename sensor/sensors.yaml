@@ -18,3 +18,7 @@
 - platform: command_line
   name: Config changes to be applied
   command: "/home/homeassistant/.homeassistant/bin/get_pending_commits_sensor.sh"
+- platform: netdata
+  resources:
+    - memory_free
+    - system_load
