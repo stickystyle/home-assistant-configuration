@@ -7,6 +7,7 @@ Bedroom:
     - sensor.bedroom_temperature
     - sensor.bedroom_humidity
     - switch.flux
+    - script.wakeup
 bedroom_lights:
   entities:
     - light.fan_light
