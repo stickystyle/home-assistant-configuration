@@ -70,6 +70,7 @@ device_tracker:
     hosts: 192.168.10.1/24
     track_new_devices: no
     consider_home: 0:10
+    interval_seconds: 30
     exclude:
       - 192.168.10.118
       - 192.168.10.122
