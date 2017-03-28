@@ -8,3 +8,15 @@ sensor.entryway_thermostat_humidity:
   hidden: true
 sensor.entryway_thermostat_target:
   hidden: true
+sensor.dark_sky_apparent_temperature:
+  homebridge_hidden: true
+sensor.dark_sky_daily_high_apparent_temperature:
+  homebridge_hidden: true
+sensor.dark_sky_daily_low_apparent_temperature:
+  homebridge_hidden: true
+sensor.dark_sky_precip_probability:
+  homebridge_hidden: true
+sensor.bedroom_humidity:
+  homebridge_hidden: true
+sensor.bedroom_temperature:
+  homebridge_hidden: true

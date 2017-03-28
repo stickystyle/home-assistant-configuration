@@ -5,3 +5,5 @@ switch.nightstand:
 switch.bedroom_switch:
   homebridge_hidden: true
   hidden: true
+switch.flux:
+  homebridge_hidden: true

@@ -1,5 +1,8 @@
 light.bedroom:
   hidden: true
+light.huebedroom:
+  hidden: true
+  homebridge_hidden: true
 light.fan_light_1:
   homebridge_hidden: true
   hidden: true
