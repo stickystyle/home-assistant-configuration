@@ -10,5 +10,3 @@
 - platform: flux
   lights:
     - light.headboard
-  start_time: '8:00'
-  stop_time: '21:00'
