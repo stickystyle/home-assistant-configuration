@@ -33,6 +33,8 @@ history:
       - input_boolean.media_select_directv
       - sun.sun
       - group.climate
+      - sensor.travis_build_status
+      - sensor.config_changes_to_be_applied
 
 recorder:
   db_url: !secret recorder_db_url
