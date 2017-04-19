@@ -1,12 +1,12 @@
-- alias: Merge pending commits when travis build passes
-  trigger:
-    platform: state
-    entity_id: sensor.travis_build_status
-    to: 'passed'
-  condition:
-    condition: numeric_state
-    platform: numeric_state
-    entity_id: sensor.config_changes_to_be_applied
-    above: 0
-  action:
-    
+# - alias: Merge pending commits when travis build passes
+#   trigger:
+#     platform: state
+#     entity_id: sensor.travis_build_status
+#     to: 'passed'
+#   condition:
+#     condition: numeric_state
+#     platform: numeric_state
+#     entity_id: sensor.config_changes_to_be_applied
+#     above: 0
+#   action:
+#
