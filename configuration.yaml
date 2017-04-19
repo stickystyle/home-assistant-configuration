@@ -47,6 +47,8 @@ logbook:
 sun:
 
 zeroconf:
+  
+ios:
 
 emulated_hue:
   type: alexa
