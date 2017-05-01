@@ -1,11 +1,9 @@
 - alias: All lights off when gone
   trigger:
     platform: state
-    entity_id: group.two_of_us
-    from: 'home'
-    to: 'not_home'
-    for:
-      minutes: 45
+    entity_id: sensor.hallway_away_mode
+    from: False
+    to: True
   condition:
     condition: state
     entity_id: group.all_lights
