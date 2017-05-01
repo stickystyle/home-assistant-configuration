@@ -9,6 +9,9 @@ light.fan_light_1:
 light.fan_light_2:
   homebridge_hidden: true
   hidden: true
+light.fan_light_3:
+  homebridge_hidden: true
+  hidden: true
 light.fan_light:
   friendly_name: 'Fan Light'
   homebridge_name: 'Fan Light'
