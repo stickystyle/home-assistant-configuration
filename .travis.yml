@@ -5,7 +5,7 @@ python:
 notifications:
   email:
     - ryan@stickystyle.net
-install: "pip install homeassistant==0.40.1"
+install: "pip install homeassistant==0.42.4"
 script:
   - .travis/build_mock_secrets.sh > ./secrets.yaml
   - hass --script check_config -c .
