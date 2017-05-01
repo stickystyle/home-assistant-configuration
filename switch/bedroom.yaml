@@ -10,3 +10,6 @@
 - platform: flux
   lights:
     - light.headboard
+    - light.fan_light_1
+    - light.fan_light_2
+    - light.fan_light_3
