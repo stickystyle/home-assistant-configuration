@@ -1,12 +1,12 @@
-sensor.entryway_thermostat_hvac_state:
+sensor.hallway_thermostat_hvac_state:
   hidden: true
-sensor.entryway_thermostat_operation_mode:
+sensor.hallway_thermostat_operation_mode:
   hidden: true
-sensor.entryway_thermostat_temperature:
+sensor.hallway_thermostat_temperature:
   hidden: true
-sensor.entryway_thermostat_humidity:
+sensor.hallway_thermostat_humidity:
   hidden: true
-sensor.entryway_thermostat_target:
+sensor.hallway_thermostat_target:
   hidden: true
 sensor.dark_sky_apparent_temperature:
   homebridge_hidden: true

@@ -1,10 +1,10 @@
-binary_sensor.entryway_thermostat_fan:
+binary_sensor.hallway_thermostat_fan:
   hidden: true
-binary_sensor.entryway_thermostat_has_leaf:
+binary_sensor.hallway_thermostat_has_leaf:
   hidden: true
-binary_sensor.entryway_thermostat_is_locked:
+binary_sensor.hallway_thermostat_is_locked:
   hidden: true
-binary_sensor.entryway_thermostat_is_using_emergency_heat:
+binary_sensor.hallway_thermostat_is_using_emergency_heat:
   hidden: true
-binary_sensor.entryway_thermostat_online:
+binary_sensor.hallway_thermostat_online:
   hidden: true
