@@ -11,6 +11,9 @@ homeassistant:
 frontend:
 
 http:
+  api_password: !secret api_password
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
 
 updater:
 
