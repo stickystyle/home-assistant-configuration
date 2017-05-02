@@ -1,12 +1,12 @@
-- platform: tplink
-  host: 192.168.10.111
-  name: Nightstand
-- platform: mqtt
-  name: "Bedroom Switch"
-  command_topic: "bedroom/switch1/set"
-  state_topic: "bedroom/switch1/status"
-  retain: true
-  optimistic: false
+# - platform: tplink
+#   host: 192.168.10.111
+#   name: Nightstand
+# - platform: mqtt
+#   name: "Bedroom Switch"
+#   command_topic: "bedroom/switch1/set"
+#   state_topic: "bedroom/switch1/status"
+#   retain: true
+#   optimistic: false
 - platform: flux
   lights:
     - light.headboard
