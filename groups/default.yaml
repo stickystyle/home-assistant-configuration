@@ -2,7 +2,5 @@ default_view:
   view: yes
   entities:
     - group.climate
-    - group.two_of_us
-    - group.kids
     - media_player.family_room_tv
     - media_player.plex
