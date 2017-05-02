@@ -27,6 +27,8 @@ history:
       - script
       - scene
       - camera
+      - ipban
+      - httplogin
     entities:
       - sensor.dark_sky_daily_high_apparent_temperature
       - sensor.dark_sky_daily_low_apparent_temperature
