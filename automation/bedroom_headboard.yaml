@@ -6,8 +6,8 @@
     below: 3.5
   condition:
     condition: state
-    entity_id: group.two_of_us
-    state: home
+    entity_id: sensor.hallway_away_mode
+    state: 'False'
   action:
     - service: light.turn_on
       data:
