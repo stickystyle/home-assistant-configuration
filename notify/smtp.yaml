@@ -1,0 +1,3 @@
+- platform: smtp
+  name: email
+  recipient: ryan@stickystyle.net
