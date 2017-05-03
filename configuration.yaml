@@ -94,10 +94,10 @@ nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
 
-camera:
-  - platform: mjpeg
-    name: Living Room cam
-    mjpeg_url: http://192.168.10.119:8080
+# camera:
+#   - platform: mjpeg
+#     name: Living Room cam
+#     mjpeg_url: http://192.168.10.119:8080
 
 automation: !include_dir_merge_list automation
 group: !include_dir_merge_named groups
