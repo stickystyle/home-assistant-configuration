@@ -13,7 +13,7 @@
       data:
         entity_id: light.front_door
         brightness: 255
-        
+
 - alias: Front porch off in the morning
   trigger:
     platform: numeric_state
@@ -28,7 +28,7 @@
     - service: light.turn_off
       data:
         entity_id: light.front_door
-        
+
 - alias: Front porch on durring the rain
   trigger:
     platform: numeric_state
