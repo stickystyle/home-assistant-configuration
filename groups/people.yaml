@@ -1,8 +1,0 @@
-Two of Us:
-  entities:
-    - device_tracker.ryanparrish_iphone
-    - device_tracker.christasiphoneattlocalnet
-Kids:
-  entities:
-    - device_tracker.catherineparrish_ipad
-    - device_tracker.tuckerparrish_ipad
