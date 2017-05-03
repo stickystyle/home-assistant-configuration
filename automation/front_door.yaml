@@ -1,0 +1,46 @@
+- alias: Front porch on in the evening
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 3.5
+  condition:
+    condition: state
+    entity_id: sensor.hallway_away_mode
+    state: 'False'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.front_door
+        brightness: 255
+        
+- alias: Front porch off in the morning
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    above: 3.5
+  condition:
+    condition: state
+    entity_id: sensor.hallway_away_mode
+    state: 'False'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.front_door
+        
+- alias: Front porch on durring the rain
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.dark_sky_precip_probability
+    value_template: '{{ state.attributes.elevation }}'
+    above: 80
+  condition:
+    condition: state
+    entity_id: sensor.hallway_away_mode
+    state: 'False'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.front_door
+        brightness: 255
