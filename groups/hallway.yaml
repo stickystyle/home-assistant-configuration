@@ -1,0 +1,5 @@
+Hallway:
+  view: no
+  entities:
+    - light.hallway_light_1
+    - light.hallway_light_2
