@@ -13,4 +13,3 @@ bedroom_lights:
     - light.fan_light
     - light.headboard
     - switch.nightstand
-    - light.bedroom_hallway
