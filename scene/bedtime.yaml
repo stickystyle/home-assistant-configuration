@@ -4,10 +4,6 @@
       state: off
     switch.nightstand:
       state: off
-    switch.bedroom_switch:
-      state: off
-    light.bedroom_hallway:
-      state: off
     light.headboard:
       state: on
       brightness: 25
@@ -18,10 +14,6 @@
     light.fan_light:
       state: off
     switch.nightstand:
-      state: off
-    switch.bedroom_switch:
-      state: off
-    light.bedroom_hallway:
       state: off
     light.headboard:
       state: on
