@@ -24,15 +24,15 @@
   trigger:
     - platform: state
       entity_id: sensor.travis_build_status
-      to: 'failing'
+      to: 'failed'
   action:
     - service: notify.pushbullet
       data:
         title: "Travis Build"
         message: "Travis build has failed"
 
-- alias: Merge pending commits when travis build passes
-  trigger:
+# - alias: Merge pending commits when travis build passes
+#   trigger:
 #     platform: state
 #     entity_id: sensor.travis_build_status
 #     to: 'passed'
