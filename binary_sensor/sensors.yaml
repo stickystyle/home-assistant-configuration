@@ -1,6 +1,6 @@
 - platform: apcupsd
 - platform: threshold
-  name: dark_sky_clear
+  name: dark_sky_cloudy
   entity_id: sensor.dark_sky_cloud_cover
-  type: lower
+  type: upper
   threshold: 0.8
