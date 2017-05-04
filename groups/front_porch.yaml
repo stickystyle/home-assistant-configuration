@@ -1,0 +1,4 @@
+Front Porch:
+  view: no
+  entities:
+    - light.front_porch
