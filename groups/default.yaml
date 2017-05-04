@@ -6,3 +6,4 @@ default_view:
     - media_player.plex
     - group.family_room
     - group.front_porch
+    - group.hallway
