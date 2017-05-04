@@ -5,7 +5,8 @@ python:
 notifications:
   email:
     - ryan@stickystyle.net
-install: "pip install homeassistant==0.43.2"
+install: "pip install homeassistant"
+before_script: >-
+  find $PWD -name "*.yaml" | xargs grep "\!secret"| awk '{print $4": 25"}' > ./secrets.yaml
 script:
-  - .travis/build_mock_secrets.sh > ./secrets.yaml
   - hass --script check_config -c .
