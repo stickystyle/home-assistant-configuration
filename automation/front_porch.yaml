@@ -11,7 +11,7 @@
   action:
     - service: light.turn_on
       data:
-        entity_id: light.front_door
+        entity_id: light.front_porch
         brightness: 255
 
 - alias: Front porch off in the morning
@@ -27,7 +27,7 @@
   action:
     - service: light.turn_off
       data:
-        entity_id: light.front_door
+        entity_id: light.front_porch
 
 - alias: Front porch on durring the rain
   trigger:
@@ -42,5 +42,5 @@
   action:
     - service: light.turn_on
       data:
-        entity_id: light.front_door
+        entity_id: light.front_porch
         brightness: 255
