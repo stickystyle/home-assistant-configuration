@@ -9,7 +9,7 @@
         title: "UPS on battery power"
         message: "The UPS just went to battery power"
 
-- alias: UPS on battery power
+- alias: UPS on battery power critical
   trigger:
     - platform: numeric_state
       entity_id: sensor.ups_time_left
