@@ -5,6 +5,8 @@
     - apparent_temperature
     - apparent_temperature_max
     - apparent_temperature_min
+    - cloud_cover
+    - summary
 - platform: mqtt
   name: 'Bedroom Temperature'
   unit_of_measurement: '°F'

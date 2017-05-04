@@ -29,12 +29,13 @@
       data:
         entity_id: light.front_porch
 
-- alias: Front porch on durring the rain
+- alias: Front porch on when cloudy
   trigger:
     platform: numeric_state
-    entity_id: sensor.dark_sky_precip_probability
-    value_template: '{{ state.attributes.elevation }}'
-    above: 80
+    entity_id: sensor.dark_sky_cloud_cover
+    above: 0.8
+    for:
+      minutes: 5
   condition:
     condition: state
     entity_id: sensor.hallway_away_mode
@@ -44,3 +45,26 @@
       data:
         entity_id: light.front_porch
         brightness: 255
+
+# Turn the front porch light off durring the day if it clears up
+- alias: Front porch off when clear
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.dark_sky_cloud_cover
+    below: 0.7
+    for:
+      minutes: 15
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.hallway_away_mode
+        state: 'False'
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        above: 3.5
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.front_porch
