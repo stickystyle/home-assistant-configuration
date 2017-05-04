@@ -1,3 +1,38 @@
+- alias: Travis build started
+  trigger:
+    - platform: state
+      entity_id: sensor.travis_build_status
+      to: 'started'
+  action:
+    - service: notify.pushbullet
+      data:
+        title: "Travis Build"
+        message: "Travis build has started"
+
+- alias: Travis build passed
+  trigger:
+    - platform: state
+      entity_id: sensor.travis_build_status
+      to: 'passed'
+  action:
+    - service: notify.pushbullet
+      data:
+        title: "Travis Build"
+        message: "Travis build has passed"
+        
+- alias: Travis build failed
+  trigger:
+    - platform: state
+      entity_id: sensor.travis_build_status
+      to: 'failing'
+  action:
+    - service: notify.pushbullet
+      data:
+        title: "Travis Build"
+        message: "Travis build has failed"
+
+asdf
+
 # - alias: Merge pending commits when travis build passes
 #   trigger:
 #     platform: state
