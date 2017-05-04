@@ -1,3 +1,9 @@
 - platform: smtp
   name: email
-  recipient: ryan@stickystyle.net
+  server: smtp.comcast.net
+  port: 587
+  sender: !secret notify_email_sender
+  username: !secret notify_email_username
+  password: !secret notify_email_password
+  starttls: True
+  recipient: !secret notify_email_recipient
