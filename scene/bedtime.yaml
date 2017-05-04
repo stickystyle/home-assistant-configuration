@@ -9,6 +9,7 @@
       brightness: 25
       color_temp: 500
       rgb_color: [116,77,25]
+
 - name: bedroom_bedtime
   entities:
     light.fan_light:
@@ -20,3 +21,20 @@
       brightness: 55
       color_temp: 500
       rgb_color: [116,77,25]
+
+- name: hallway_nightlight
+  entities:
+    light.hallway_light_1:
+      state: on
+      brightness: 4
+    light.hallway_light_2:
+      state: off
+
+- name: hallway_morning
+  entities:
+    light.hallway_light_1:
+      state: on
+      brightness: 55
+    light.hallway_light_2:
+      state: on
+      brightness: 55
