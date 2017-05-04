@@ -113,6 +113,7 @@ notify: !include_dir_merge_list notify
 scene: !include_dir_merge_list scene
 script: !include_dir_merge_named script
 sensor: !include_dir_merge_list sensor
+binary_sensor: !include_dir_merge_list binary_sensor
 shell_command: !include_dir_merge_named shell_command
 switch: !include_dir_merge_list switch
 zone: !include_dir_merge_list zone

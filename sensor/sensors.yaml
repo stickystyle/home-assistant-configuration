@@ -27,3 +27,9 @@
     hallway_away_mode:
       entity_id: climate.hallway
       value_template: "{{ is_state_attr('climate.hallway', 'away_mode', 'on') }}"
+- platform: apcupsd
+  resources:
+    - linev
+    - loadpct
+    - itemp
+    - timeleft
