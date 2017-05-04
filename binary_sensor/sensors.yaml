@@ -3,4 +3,4 @@
   name: dark_sky_cloudy
   entity_id: sensor.dark_sky_cloud_cover
   type: upper
-  threshold: 0.8
+  threshold: 80
