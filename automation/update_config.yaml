@@ -15,7 +15,7 @@
       entity_id: sensor.travis_build_status
       to: 'passed'
   action:
-    - service: notify.pushbullet
+    - service: notify.ios_ryans_iphone
       data:
         title: "Travis Build"
         message: "Travis build has passed"
@@ -26,7 +26,7 @@
       entity_id: sensor.travis_build_status
       to: 'failed'
   action:
-    - service: notify.pushbullet
+    - service: notify.ios_ryans_iphone
       data:
         title: "Travis Build"
         message: "Travis build has failed"

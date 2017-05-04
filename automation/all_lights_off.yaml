@@ -12,7 +12,7 @@
     - service: light.turn_off
       data:
         entity_id: group.all_lights
-    - service: notify.pushbullet
+    - service: notify.ios_ryans_iphone
       data:
         title: "Turning off the lights"
         message: "Nobody was home, so I turned off the lights"
