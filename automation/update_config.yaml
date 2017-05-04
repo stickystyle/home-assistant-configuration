@@ -1,14 +1,3 @@
-- alias: Travis build started
-  trigger:
-    - platform: state
-      entity_id: sensor.travis_build_status
-      to: 'started'
-  action:
-    - service: notify.pushbullet
-      data:
-        title: "Travis Build"
-        message: "Travis build has started"
-
 - alias: Travis build passed
   trigger:
     - platform: state
