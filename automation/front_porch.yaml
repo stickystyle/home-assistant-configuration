@@ -31,9 +31,9 @@
 
 - alias: Front porch on when cloudy
   trigger:
-    platform: numeric_state
-    entity_id: sensor.dark_sky_cloud_cover
-    above: 0.8
+    platform: state
+    entity_id: sensor.dark_sky_cloudy
+    state: 'true'
     for:
       minutes: 5
   condition:
@@ -49,9 +49,9 @@
 # Turn the front porch light off durring the day if it clears up
 - alias: Front porch off when clear
   trigger:
-    platform: numeric_state
-    entity_id: sensor.dark_sky_cloud_cover
-    below: 0.7
+    platform: state
+    entity_id: sensor.dark_sky_cloudy
+    state: 'false'
     for:
       minutes: 15
   condition:
