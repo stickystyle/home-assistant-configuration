@@ -4,7 +4,7 @@
       entity_id: sensor.status
       to: 'onbatt'
   action:
-    - service: notify.pushbullet
+    - service: notify.ios_ryans_iphone
       data:
         title: "UPS on battery power"
         message: "The UPS just went to battery power"
@@ -15,7 +15,7 @@
       entity_id: sensor.ups_time_left
       below: 15
   action:
-    - service: notify.pushbullet
+    - service: notify.ios_ryans_iphone
       data:
         title: "UPS battery power critical"
         message: "15min remain of battery power, servers shutting down in 5min"
