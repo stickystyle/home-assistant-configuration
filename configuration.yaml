@@ -94,6 +94,10 @@ nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
 
+apcupsd:
+  host: 192.168.10.200
+  port: 3551
+
 # camera:
 #   - platform: mjpeg
 #     name: Living Room cam
