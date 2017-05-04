@@ -17,31 +17,3 @@
       data:
         entity_id: light.hallway_light_2
 
-- alias: Hallway in morning
-  trigger:
-    platform: time
-    after: '06:15:00'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: sensor.hallway_away_mode
-        state: 'False'
-      - condition: time
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: group.hallway
-        brightness: 45
-    - delay:
-        minutes: 15
-    - service: light.turn_on
-      data:
-        entity_id: group.hallway
-        brightness: 55
