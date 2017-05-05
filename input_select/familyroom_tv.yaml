@@ -1,8 +1,10 @@
 tv_media_source:
   name: Media Source
   options:
-    - DirecTV
-    - Playstation 4
-    - Chromecast
+    - Comcast
+    - Plex
+    - Netflix
+    - Hulu
+    - Playstation
   initial: None
   icon: mdi:television
