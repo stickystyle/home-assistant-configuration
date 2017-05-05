@@ -3,24 +3,32 @@ sensor.hallway_thermostat_hvac_state:
 sensor.hallway_thermostat_operation_mode:
   hidden: true
 sensor.hallway_thermostat_temperature:
+  friendly_name: 'Nest Temperature'
   hidden: true
 sensor.hallway_thermostat_humidity:
+  friendly_name: 'Nest Humidity'
   hidden: true
 sensor.hallway_thermostat_target:
+  friendly_name: 'Nest Target Temp'
   hidden: true
 
 sensor.dark_sky_apparent_temperature:
   homebridge_hidden: true
+  friendly_name: 'Heat Index'
 sensor.dark_sky_daily_high_apparent_temperature:
   homebridge_hidden: true
 sensor.dark_sky_daily_low_apparent_temperature:
   homebridge_hidden: true
 sensor.dark_sky_precip_probability:
   homebridge_hidden: true
+  friendly_name: 'Chance of rain'
 sensor.dark_sky_cloud_coverage:
   friendly_name: 'Cloud Coverage'
+  homebridge_hidden: true
 sensor.dark_sky_summary:
   friendly_name: 'Current Conditions'
+  homebridge_hidden: true
+
 
 sensor.bedroom_humidity:
   homebridge_hidden: true
