@@ -7,3 +7,6 @@ default_view:
     - group.family_room
     - group.front_porch
     - group.hallway
+    - sensor.dark_sky_cloud_coverage
+    - sensor.dark_sky_summary
+    - switch.flux
