@@ -17,6 +17,10 @@ http:
   login_attempts_threshold: 5
 
 updater:
+  
+discovery:
+  ignore:
+    - plex_mediaserver
 
 history:
   exclude:
