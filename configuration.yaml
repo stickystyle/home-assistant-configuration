@@ -86,6 +86,12 @@ mqtt:
   password: !secret mqtt_password
 
 
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: http://192.168.10.118:3118
+
 # device_tracker:
 #   - platform: nmap_tracker
 #     hosts: 192.168.10.1/24
