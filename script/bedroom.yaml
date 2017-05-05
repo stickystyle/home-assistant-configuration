@@ -27,7 +27,3 @@ wakeup:
     - service: switch.turn_on
       data:
         entity_id: switch.nightstand
-    - service: light.turn_on
-      data:
-        entity_id: light.bedroom_hallway
-        brightness: 255
