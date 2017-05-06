@@ -3,7 +3,7 @@ Interior Lights:
   entities:
     - light.hallway_light_1
     - light.hallway_light_2
-    - light.family_room
+    - light.couch
     - light.fan_light
     - light.headboard
     - switch.nightstand

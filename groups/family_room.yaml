@@ -1,4 +1,4 @@
 Family Room:
   view: no
   entities:
-    - light.family_room
+    - light.couch
