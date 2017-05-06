@@ -36,3 +36,12 @@
     - timeleft
     - bcharge
     - status
+# need to have an inbound package before usps is enabled
+# sensor:
+#   - platform: usps
+#     username: !secret sensor_usps_username
+#     password: !secret sensor_usps_password
+sensor:
+  - platform: ups
+    username: !secret sensor_ups_username
+    password: !secret sensor_ups_password
