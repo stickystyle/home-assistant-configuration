@@ -36,10 +36,6 @@
     state: 'on'
     for:
       minutes: 5
-  condition:
-    condition: state
-    entity_id: sensor.hallway_away_mode
-    state: 'False'
   action:
     - service: light.turn_on
       data:
@@ -55,15 +51,10 @@
     for:
       minutes: 15
   condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: sensor.hallway_away_mode
-        state: 'False'
-      - condition: numeric_state
-        entity_id: sun.sun
-        value_template: '{{ state.attributes.elevation }}'
-        above: 3.5
+      condition: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      above: 3.5
   action:
     - service: light.turn_off
       data:
