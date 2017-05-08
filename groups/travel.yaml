@@ -1,0 +1,9 @@
+Travel Times:
+  view: yes
+  entities:
+    - group.bedroom_lights
+    - scene.bedroom_nightlight
+    - scene.bedroom_bedtime
+    - sensor.bedroom_temperature
+    - sensor.bedroom_humidity
+    - script.wakeup

@@ -10,3 +10,8 @@ group.bedroom_lights:
 group.system:
   homebridge_hidden: true
   icon: mdi:desktop-mac
+group.travel:
+  homebridge_hidden: true
+  icon: mdi:car
+group.interior_lights:
+  icon: mdi:lightbulb
