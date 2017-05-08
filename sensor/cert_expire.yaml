@@ -1,0 +1,8 @@
+- platform: cert_expiry
+  host: cruzwms.net
+- platform: cert_expiry
+  host: home.theparrishfamily.net
+- platform: cert_expiry
+  host: b2b.corelogicllc.com
+- platform: cert_expiry
+  host: citrix.freightlogistics.com
