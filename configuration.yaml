@@ -47,8 +47,8 @@ history:
       - sensor.config_changes_to_be_applied
       - binary_sensor.dark_sky_cloudy
       - sensor.dark_sky_summary
-      - sensor.ryans_iphone_battery_level
       - sensor.ryans_iphone_battery_state
+      - sensor.christas_iphone_battery_state
 
 recorder:
   db_url: !secret recorder_db_url
