@@ -1,0 +1,4 @@
+Two of Us:
+  entities:
+    - device_tracker.ryans_iphone
+    - device_tracker.christas_iphone
