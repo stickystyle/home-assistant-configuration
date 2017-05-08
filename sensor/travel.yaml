@@ -1,0 +1,5 @@
+- platform: google_travel_time
+  name: Home to FLI
+  api_key: !secret google_api_key
+  origin: zone.home
+  destination: zone.fli
