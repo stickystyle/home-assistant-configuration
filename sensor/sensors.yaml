@@ -44,3 +44,6 @@
 # - platform: ups
 #   username: !secret sensor_ups_username
 #   password: !secret sensor_ups_password
+- platform: crimereports
+  name: Crime around home
+  radius: 500
