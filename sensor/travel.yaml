@@ -2,4 +2,31 @@
   name: Home to FLI
   api_key: !secret google_api_key
   origin: zone.home
-  destination: zone.fli
+  destination: !secret zone_fli_name
+- platform: google_travel_time
+  name: FLI to Home
+  api_key: !secret google_api_key
+  origin: !secret zone_fli_name
+  destination: zone.home
+
+- platform: google_travel_time
+  name: Salon to Home
+  api_key: !secret google_api_key
+  origin: !secret zone_salon_name
+  destination: zone.home
+- platform: google_travel_time
+  name: Home to Salon
+  api_key: !secret google_api_key
+  origin: zone.home
+  destination: !secret zone_salon_name
+
+- platform: google_travel_time
+  name: Christa to Home
+  api_key: !secret google_api_key
+  origin: device_tracker.christas_iphone
+  destination: zone.home
+- platform: google_travel_time
+  name: Ryan to Home
+  api_key: !secret google_api_key
+  origin: device_tracker.ryans_iphone
+  destination: zone.home
