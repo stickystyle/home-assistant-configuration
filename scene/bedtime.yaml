@@ -29,12 +29,3 @@
       brightness: 4
     light.hallway_light_2:
       state: off
-
-- name: hallway_morning
-  entities:
-    light.hallway_light_1:
-      state: on
-      brightness: 55
-    light.hallway_light_2:
-      state: on
-      brightness: 55
