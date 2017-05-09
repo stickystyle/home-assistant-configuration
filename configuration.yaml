@@ -85,15 +85,15 @@ mqtt:
   username: !secret mqtt_username
   password: !secret mqtt_password
 
-device_tracker:
-  - platform: nmap_tracker
-    hosts: 192.168.10.1/24
-    track_new_devices: no
-    consider_home: 0:10
-    interval_seconds: 30
-    exclude:
-      - 192.168.10.118
-      - 192.168.10.122
+# device_tracker:
+#   - platform: nmap_tracker
+#     hosts: 192.168.10.1/24
+#     track_new_devices: no
+#     consider_home: 0:10
+#     interval_seconds: 30
+#     exclude:
+#       - 192.168.10.118
+#       - 192.168.10.122
 
 nest:
   client_id: !secret nest_client_id
