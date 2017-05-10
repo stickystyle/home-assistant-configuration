@@ -1,5 +1,5 @@
 Exterior Lights:
   view: Yes
   entities:
-    - light.front_porch
-    - light.back_porch
+    - light.front_door
+    - light.back_door
