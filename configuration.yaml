@@ -109,7 +109,7 @@ tradfri:
 
 camera:
   - platform: mjpeg
-    name: Living Room cam
+    name: Family Room
     mjpeg_url: http://192.168.10.200:8081
 
 automation: !include_dir_merge_list automation
