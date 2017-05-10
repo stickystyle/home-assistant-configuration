@@ -12,3 +12,4 @@ default_view:
     - sensor.dark_sky_cloud_coverage
     - sensor.dark_sky_summary
     - switch.flux
+    - camera.family_room
