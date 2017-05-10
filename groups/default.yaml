@@ -8,6 +8,7 @@ default_view:
     - group.family_room
     - group.front_yard
     - group.hallway
+    - group.back_yard
     - sensor.dark_sky_cloud_coverage
     - sensor.dark_sky_summary
     - switch.flux
