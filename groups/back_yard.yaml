@@ -1,0 +1,4 @@
+Back Yard:
+  view: no
+  entities:
+    - light.back_porch
