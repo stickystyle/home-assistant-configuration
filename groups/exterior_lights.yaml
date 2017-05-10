@@ -1,5 +1,5 @@
 Exterior Lights:
-  view: Yes
+  view: No
   entities:
     - light.front_door
     - light.back_door
