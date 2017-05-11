@@ -1,0 +1,19 @@
+- alias: Dad left work
+  trigger:
+    platform: state
+    from: !secret zone_fli_name
+  condition:
+    condition: time
+    after: '16:55:00'
+    before: '17:45:00'
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    - service: notify.ios_ryans_iphone
+      data:
+        title: "Left work"
+        message: "Dad left work, should be home in {{ states.sensor.ryan_to_home.attributes.duration_in_traffic }}"
