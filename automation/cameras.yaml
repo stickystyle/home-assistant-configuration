@@ -34,3 +34,7 @@
       data:
         title: "Motion Detected!"
         message: "I detected motion while nobody was home!"
+        date:
+          push:
+            category: camera
+            entity_id: camera.family_room
