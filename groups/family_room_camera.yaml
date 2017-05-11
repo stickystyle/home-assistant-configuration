@@ -1,0 +1,4 @@
+Family Room Camera:
+  entities:
+    - camera.family_room
+    - switch.family_room_motion

@@ -9,6 +9,6 @@ default_view:
     - group.exterior_lights
     - group.hallway
     - switch.flux
-    - camera.family_room
+    - group.family_room_camera
     - media_player.family_room_tv
     - media_player.plex
