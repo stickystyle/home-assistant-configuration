@@ -23,3 +23,14 @@
     - service: switch.turn_off
       data:
         entity_id: switch.family_room_motion
+
+- alias: Notify when motion
+  trigger:
+    platform: state
+    entity_id: binary_sensor.family_room_motion
+    to: 'on'
+  action:
+    - service: notify.ios_ryans_iphone
+      data:
+        title: "Motion Detected!"
+        message: "I detected motion while nobody was home!"
