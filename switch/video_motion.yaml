@@ -5,4 +5,4 @@
       command_off: "curl -s http://192.168.10.200:8080/0/detection/pause"
       command_state: "curl -s http://192.168.10.200:8080/0/detection/status|awk '{print $5}'"
       value_template: '{{ value == "ACTIVE" }}'
-      friendly_name: Family Room Detection Status
+      friendly_name: Family Room Detection
