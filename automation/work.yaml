@@ -1,6 +1,7 @@
 - alias: Dad left work
   trigger:
     platform: state
+    entity_id: device_tracker.ryans_iphone
     from: !secret zone_fli_name
   condition:
     condition: time
