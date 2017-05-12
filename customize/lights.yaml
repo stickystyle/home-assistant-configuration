@@ -12,7 +12,12 @@ light.fan_light_3:
   hidden: true
 light.fan_light:
   friendly_name: 'Fan Light'
-  homebridge_name: 'Fan Light'
+  emulated_hue: True
+light.front_door:
+  friendly_name: 'Front Door Light'
+  emulated_hue: True
+light.back_door:
+  friendly_name: 'Back Door Light'
   emulated_hue: True
 light.headboard:
   emulated_hue: False
