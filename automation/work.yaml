@@ -18,3 +18,23 @@
       data:
         title: "Left work"
         message: "Dad left work, should be home in {{ states.sensor.ryan_to_home.attributes.duration_in_traffic }}"
+        
+- alias: Christa left work
+  trigger:
+    platform: state
+    entity_id: device_tracker.christas_iphone
+    from: !secret zone_salon_name
+  condition:
+    condition: time
+    after: '18:00:00'
+    before: '20:25:00'
+    weekday:
+      - wed
+      - thu
+      - fri
+      - sat
+  action:
+    - service: notify.ios_ryans_iphone
+      data:
+        title: "Left work"
+        message: "Christa left work, should be home in {{ states.sensor.christa_to_home.attributes.duration_in_traffic }}"
