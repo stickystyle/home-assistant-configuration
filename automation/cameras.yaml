@@ -1,9 +1,12 @@
 - alias: Enable camera when gone
   trigger:
-    platform: state
-    entity_id: sensor.hallway_away_mode
-    from: 'False'
-    to: 'True'
+    - platform: state
+      entity_id: sensor.hallway_away_mode
+      from: 'False'
+      to: 'True'
+    - platform: state
+      entity_id: group.two_of_us
+      from: 'home'
   action:
     - service: switch.turn_on
       data:
@@ -15,10 +18,13 @@
 
 - alias: Disable camera when home
   trigger:
-    platform: state
-    entity_id: sensor.hallway_away_mode
-    from: 'True'
-    to: 'False'
+    - platform: state
+      entity_id: sensor.hallway_away_mode
+      from: 'True'
+      to: 'False'
+    - platform: state
+      entity_id: group.two_of_us
+      to: 'home'
   action:
     - service: switch.turn_off
       data:
