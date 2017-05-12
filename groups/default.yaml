@@ -12,3 +12,4 @@ default_view:
     - group.family_room_camera
     - media_player.family_room_tv
     - media_player.plex
+    - scene.bedtime

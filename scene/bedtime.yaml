@@ -29,3 +29,32 @@
       brightness: 4
     light.hallway_light_2:
       state: off
+
+- name: bedtime
+  entities:
+    group.family_room:
+      state: off
+    media_player.family_room_tv:
+      state: off
+    light.closet:
+      state: off
+    light.laundry_room:
+      state: off
+    switch.nightstand:
+      state: off
+    light.fan_light_2:
+      state: off
+      transition: 1
+    light.fan_light_3:
+      state: off
+      transition: 1
+    light.fan_light_1:
+      state: on
+      brightness: 4
+      color_name: red
+      transition: 1
+    light.hallway_light_1:
+      state: on
+      brightness: 4
+    light.hallway_light_2:
+      state: off
