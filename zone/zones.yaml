@@ -1,0 +1,11 @@
+- name: !secret zone_school_name
+  latitude: !secret zone_school_latitude
+  longitude: !secret zone_school_longitude
+  radius: 100
+  icon: mdi:school
+
+- name: !secret zone_youth_center_name
+  latitude: !secret zone_youth_center_latitude
+  longitude: !secret zone_youth_center_longitude
+  radius: 100
+  icon: mdi:human
