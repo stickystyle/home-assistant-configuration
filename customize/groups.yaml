@@ -18,3 +18,6 @@ group.travel:
   icon: mdi:car
 group.interior_lights:
   icon: mdi:lightbulb
+group.interior_lights:
+  friendly_name: 'Interior Lights'
+  emulated_hue: True
