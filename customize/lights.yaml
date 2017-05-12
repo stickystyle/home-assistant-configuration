@@ -1,16 +1,14 @@
-light.bedroom:
-  hidden: true
-light.huebedroom:
-  hidden: true
-  homebridge_hidden: true
 light.fan_light_1:
   homebridge_hidden: true
+  emulated_hue: False
   hidden: true
 light.fan_light_2:
   homebridge_hidden: true
+  emulated_hue: False
   hidden: true
 light.fan_light_3:
   homebridge_hidden: true
+  emulated_hue: False
   hidden: true
 light.fan_light:
   friendly_name: 'Fan Light'
@@ -18,3 +16,11 @@ light.fan_light:
   emulated_hue: True
 light.headboard:
   emulated_hue: False
+light.hallway_light_1:
+  homebridge_hidden: true
+  emulated_hue: False
+  hidden: true
+light.hallway_light_2:
+  homebridge_hidden: true
+  emulated_hue: False
+  hidden: true

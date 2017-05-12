@@ -4,14 +4,18 @@ scene.bedroom_off:
 scene.bedroom_on:
   homebridge_hidden: true
   hidden: true
-scene.bedroom_nightlight:
-  friendly_name: 'Nightlight'
-  homebridge_hidden: false
-  emulated_hue: True
-scene.bedroom_bedtime:
-  friendly_name: 'Bedtime'
-  homebridge_hidden: false
-  emulated_hue: True
 scene.bedroom_goodmorning:
   homebridge_hidden: true
   hidden: false
+scene.bedtime:
+  homebridge_hidden: true
+  emulated_hue: True
+  friendly_name: 'Bedtime'
+# scene.bedroom_nightlight:
+#   friendly_name: 'Nightlight'
+#   homebridge_hidden: false
+#   emulated_hue: True
+# scene.bedroom_bedtime:
+#   friendly_name: 'Bedtime'
+#   homebridge_hidden: false
+#   emulated_hue: True

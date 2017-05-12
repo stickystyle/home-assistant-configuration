@@ -1,5 +1,6 @@
 media_player.directv:
   homebridge_hidden: true
+  emulated_hue: False
 media_player.family_room_tv:
   homebridge_hidden: true
   emulated_hue: True

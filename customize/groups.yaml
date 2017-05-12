@@ -7,6 +7,9 @@ group.bedroom:
 group.bedroom_lights:
   friendly_name: 'Bedroom Lights'
   emulated_hue: True
+group.hallway:
+  friendly_name: 'Hallway Lights'
+  emulated_hue: True
 group.system:
   homebridge_hidden: true
   icon: mdi:desktop-mac
