@@ -19,6 +19,9 @@ light.front_door:
 light.back_door:
   friendly_name: 'Back Door Light'
   emulated_hue: True
+light.couch:
+  friendly_name: 'Couch Light'
+  emulated_hue: True
 light.headboard:
   emulated_hue: False
 light.hallway_light_1:
