@@ -1,0 +1,80 @@
+automation:
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    service: group.set_visibility
+    entity_id: group.evening_scenes
+    data:
+      visible: True
+      
+automation:
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: group.set_visibility
+    entity_id: group.evening_scenes
+    data:
+      visible: False
+
+automation:
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    service: group.set_visibility
+    entity_id: group.exterior_lights
+    data:
+      visible: True
+      
+automation:
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: group.set_visibility
+    entity_id: group.exterior_lights
+    data:
+      visible: False
+      
+automation:
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: group.set_visibility
+    entity_id: group.evening_scenes
+    data:
+      visible: False
+      
+automation:
+  trigger:
+    platform: state
+    entity_id: group.two_of_us
+    to: 'home'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.ryans_iphone
+        state: 'home'
+      - condition: state
+        entity_id: device_tracker.christas_iphone
+        state: 'home'
+  action:
+    service: group.set_visibility
+    entity_id: group.two_of_us
+    data:
+      visible: False
+      
+automation:
+  trigger:
+    platform: state
+    entity_id: group.two_of_us
+    from: 'home'
+  action:
+    service: group.set_visibility
+    entity_id: group.two_of_us
+    data:
+      visible: True
