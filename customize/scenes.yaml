@@ -11,6 +11,10 @@ scene.bedtime:
   homebridge_hidden: true
   emulated_hue: True
   friendly_name: 'Bedtime'
+scene.hallway_nightlight:
+  homebridge_hidden: true
+  emulated_hue: False
+  friendly_name: 'Hallway Nightlight'
 # scene.bedroom_nightlight:
 #   friendly_name: 'Nightlight'
 #   homebridge_hidden: false
