@@ -13,3 +13,4 @@ default_view:
     - media_player.family_room_tv
     - media_player.plex
     - scene.bedtime
+    - scene.hallway_nightlight
