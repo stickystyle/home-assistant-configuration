@@ -1,4 +1,4 @@
-automation:
+- alias: Show evening scenes
   trigger:
     platform: sun
     event: sunset
@@ -8,7 +8,7 @@ automation:
     data:
       visible: True
       
-automation:
+- alias: Hide evening scenes
   trigger:
     platform: sun
     event: sunrise
@@ -18,7 +18,7 @@ automation:
     data:
       visible: False
 
-automation:
+- alias: Hide exterior lights
   trigger:
     platform: sun
     event: sunset
@@ -28,7 +28,17 @@ automation:
     data:
       visible: True
       
-automation:
+- alias: Show exterior lights
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: group.set_visibility
+    entity_id: group.exterior_lights
+    data:
+      visible: True
+      
+- alias: Hide exterior lights
   trigger:
     platform: sun
     event: sunrise
@@ -38,17 +48,7 @@ automation:
     data:
       visible: False
       
-automation:
-  trigger:
-    platform: sun
-    event: sunrise
-  action:
-    service: group.set_visibility
-    entity_id: group.evening_scenes
-    data:
-      visible: False
-      
-automation:
+- alias: Hide Two of Us
   trigger:
     platform: state
     entity_id: group.two_of_us
@@ -68,7 +68,7 @@ automation:
     data:
       visible: False
       
-automation:
+- alias: Show Two of Us
   trigger:
     platform: state
     entity_id: group.two_of_us
