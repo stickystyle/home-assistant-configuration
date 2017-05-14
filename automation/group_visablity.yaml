@@ -21,6 +21,16 @@
 - alias: Hide exterior lights
   trigger:
     platform: sun
+    event: sunrise
+  action:
+    service: group.set_visibility
+    entity_id: group.exterior_lights
+    data:
+      visible: False
+      
+- alias: Show exterior lights
+  trigger:
+    platform: sun
     event: sunset
   action:
     service: group.set_visibility
@@ -28,22 +38,3 @@
     data:
       visible: True
       
-- alias: Show exterior lights
-  trigger:
-    platform: sun
-    event: sunrise
-  action:
-    service: group.set_visibility
-    entity_id: group.exterior_lights
-    data:
-      visible: True
-      
-- alias: Hide exterior lights
-  trigger:
-    platform: sun
-    event: sunrise
-  action:
-    service: group.set_visibility
-    entity_id: group.exterior_lights
-    data:
-      visible: False
