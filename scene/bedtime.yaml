@@ -42,17 +42,13 @@
       state: off
     switch.nightstand:
       state: off
-    light.fan_light_2:
+    light.fan_light:
       state: off
       transition: 1
-    light.fan_light_3:
-      state: off
-      transition: 1
-    light.fan_light_1:
+    light.headboard:
       state: on
-      brightness: 4
-      color_name: red
-      transition: 1
+      brightness: 12
+      color: red
     light.hallway_light_1:
       state: on
       brightness: 4
