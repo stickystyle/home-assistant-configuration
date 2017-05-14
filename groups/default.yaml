@@ -3,7 +3,8 @@ default_view:
   entities:
     - sensor.dark_sky_cloud_coverage
     - sensor.dark_sky_summary
-    - group.two_of_us
+    - device_tracker.ryans_iphone
+    - device_tracker.christas_iphone
     - group.climate
     - group.family_room
     - group.exterior_lights
