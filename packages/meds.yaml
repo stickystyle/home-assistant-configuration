@@ -64,6 +64,9 @@ automation:
         data:
           title: "Morning Meds"
           message: "Tucker's morning meds have not been taken!"
+          data:
+            push:
+              category: "MEDS_NOT_TAKEN"
           
   - alias: Meds have not been taken weekend
     trigger:
@@ -92,3 +95,6 @@ automation:
         data:
           title: "Morning Meds"
           message: "Tucker's morning meds have not been taken!"
+          data:
+            push:
+              category: "MEDS_NOT_TAKEN"
