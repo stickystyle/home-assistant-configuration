@@ -103,6 +103,15 @@ nest:
 apcupsd:
   host: 192.168.10.200
   port: 3551
+  
+alert:
+  ups_on_battery:
+    name: UPS is on battery power
+    entity_id: binary_sensor.ups_online_status
+    state: 'off'
+    repeat: 3
+    notifiers:
+      - ios_ryans_iphone
 
 tradfri:
   host: 192.168.10.112
@@ -112,11 +121,12 @@ camera:
   - platform: mjpeg
     name: Family Room
     mjpeg_url: http://192.168.10.200:8081
-    
+
 # image_processing:
 #   - platform: dlib_face_detect
 #     source:
 #       - entity_id: camera.family_room
+
 
 automation: !include_dir_merge_list automation
 group: !include_dir_merge_named groups

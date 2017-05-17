@@ -1,13 +1,13 @@
-- alias: UPS on battery power
+- alias: UPS off battery power
   trigger:
     - platform: state
-      entity_id: sensor.status
-      to: 'onbatt'
+      entity_id: binary_sensor.ups_online_status
+      to: 'on'
   action:
     - service: notify.ios_ryans_iphone
       data:
-        title: "UPS on battery power"
-        message: "The UPS just went to battery power"
+        title: "UPS off battery power"
+        message: "Power has been restored"
 
 - alias: UPS on battery power critical
   trigger:
