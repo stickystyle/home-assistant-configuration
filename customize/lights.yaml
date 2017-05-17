@@ -23,7 +23,11 @@ light.couch:
   friendly_name: 'Couch Light'
   emulated_hue: True
 light.headboard:
-  emulated_hue: False
+  emulated_hue: True
+  friendly_name: 'Headboard'
+light.closet:
+  emulated_hue: True
+  friendly_name: 'Closet'
 light.hallway_light_1:
   homebridge_hidden: true
   emulated_hue: False
