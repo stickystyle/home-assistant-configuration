@@ -10,14 +10,43 @@ automation:
       entity_id: input_boolean.meds_taken
       to: 'on'
       for:
-        hours: 1
+        hours: 2
     action:
       service: input_boolean.turn_off
 
-  - alias: Meds have not been taken
+  - alias: Meds have not been taken weekday
     trigger:
       platform: time
       after: '07:24:00'
+      before: '09:00:00'
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    condition:
+      condition: state
+      entity_id: input_boolean.meds_taken
+      state: 'off'
+    action:
+      - service: notify.ios_christas_iphone
+        data:
+          title: "Morning Meds"
+          message: "Tucker's morning meds have not been taken!"
+      - service: notify.ios_ryans_iphone
+        data:
+          title: "Morning Meds"
+          message: "Tucker's morning meds have not been taken!"
+          
+  - alias: Meds have not been taken weekend
+    trigger:
+      platform: time
+      after: '08:45:00'
+      before: '09:45:00'
+      weekday:
+        - sat
+        - sun
     condition:
       condition: state
       entity_id: input_boolean.meds_taken
