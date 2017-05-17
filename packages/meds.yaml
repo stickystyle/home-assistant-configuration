@@ -2,6 +2,7 @@ input_boolean:
   meds_taken:
     name: Meds have been taken
     initial: 'off'
+    icon: mdi:pill
 
 automation:
   - alias: Reset meds taken
