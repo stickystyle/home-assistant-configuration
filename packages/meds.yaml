@@ -7,6 +7,11 @@ input_boolean:
     name: Meds reminder enabled
     initial: 'on'
 
+group:
+  meds_reminder:
+    entities:
+      - input_boolean.meds_taken
+      - input_boolean.meds_reminder
 
 automation:
   - alias: Reset meds taken

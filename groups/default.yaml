@@ -14,3 +14,4 @@ default_view:
     - media_player.family_room_tv
     - media_player.plex
     - group.evening_scenes
+    - group.meds_reminder
