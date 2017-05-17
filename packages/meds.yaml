@@ -1,7 +1,7 @@
 input_boolean:
   meds_taken:
     name: Meds have been taken
-    initial: off
+    initial: 'off'
 
 automation:
   - alias: Reset meds taken
@@ -21,6 +21,7 @@ automation:
     condition:
       condition: state
       entity_id: input_boolean.meds_taken
+      state: 'off'
     action:
       - service: notify.ios_christas_iphone
         data:
