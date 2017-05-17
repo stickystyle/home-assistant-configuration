@@ -3,6 +3,10 @@ input_boolean:
     name: Meds have been taken
     initial: 'off'
     icon: mdi:pill
+  meds_reminder:
+    name: Meds reminder enabled
+    initial: 'on'
+
 
 automation:
   - alias: Reset meds taken
@@ -14,6 +18,16 @@ automation:
         hours: 2
     action:
       service: input_boolean.turn_off
+  
+  - alias: Mark meds as taken from notification
+    trigger:
+      platform: event
+      event_type: ios.notification_action_fired
+      event_data:
+        actionName: MARK_MEDS_TAKEN
+    action:
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.meds_taken
 
   - alias: Meds have not been taken weekday
     trigger:
@@ -25,6 +39,9 @@ automation:
         - condition: state
           entity_id: input_boolean.meds_taken
           state: 'off'
+        - condition: state
+          entity_id: input_boolean.meds_reminder
+          state: 'on'
         - condition: time
           before: '09:00:00'
           weekday:
@@ -34,10 +51,10 @@ automation:
             - thu
             - fri
     action:
-      - service: notify.ios_christas_iphone
-        data:
-          title: "Morning Meds"
-          message: "Tucker's morning meds have not been taken!"
+      # - service: notify.ios_christas_iphone
+      #   data:
+      #     title: "Morning Meds"
+      #     message: "Tucker's morning meds have not been taken!"
       - service: notify.ios_ryans_iphone
         data:
           title: "Morning Meds"
@@ -53,16 +70,19 @@ automation:
         - condition: state
           entity_id: input_boolean.meds_taken
           state: 'off'
+        - condition: state
+          entity_id: input_boolean.meds_reminder
+          state: 'on'
         - condition: time
           before: '09:55:00'
           weekday:
             - sat
             - sun
     action:
-      - service: notify.ios_christas_iphone
-        data:
-          title: "Morning Meds"
-          message: "Tucker's morning meds have not been taken!"
+      # - service: notify.ios_christas_iphone
+      #   data:
+      #     title: "Morning Meds"
+      #     message: "Tucker's morning meds have not been taken!"
       - service: notify.ios_ryans_iphone
         data:
           title: "Morning Meds"

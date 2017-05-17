@@ -69,6 +69,16 @@ sun:
 zeroconf:
   
 ios:
+  push:
+    categories:
+      - name: Meds Not Taken
+        identifier: 'MEDS_NOT_TAKEN'
+        actions:
+          - identifier: 'MARK_MEDS_TAKEN'
+            title: 'Mark meds as taken'
+            activationMode: 'background'
+            authenticationRequired: yes
+            destructive: yes
 
 emulated_hue:
   type: alexa
