@@ -6,7 +6,7 @@ notifications:
   email:
     - ryan@stickystyle.net
 install: "pip install homeassistant"
-before_script: >-
-  find $PWD -name "*.yaml" | xargs grep "\!secret"| awk '{print $4": 25"}' > ./secrets.yaml
+before_install:
+  - mv travis_secrets.yaml secrets.yaml
 script:
   - hass --script check_config -c .
