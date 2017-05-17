@@ -18,16 +18,19 @@ automation:
     trigger:
       platform: time
       after: '07:24:00'
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
     condition:
-      condition: state
-      entity_id: input_boolean.meds_taken
-      state: 'off'
+      conditions: and
+        - condition: state
+          entity_id: input_boolean.meds_taken
+          state: 'off'
+        - condition: time
+          before: '09:00:00'
+          weekday:
+            - mon
+            - tue
+            - wed
+            - thu
+            - fri
     action:
       - service: notify.ios_christas_iphone
         data:
@@ -46,9 +49,15 @@ automation:
         - sat
         - sun
     condition:
-      condition: state
-      entity_id: input_boolean.meds_taken
-      state: 'off'
+      conditions: and
+        - condition: state
+          entity_id: input_boolean.meds_taken
+          state: 'off'
+        - condition: time
+          before: '09:55:00'
+          weekday:
+            - sat
+            - sun
     action:
       - service: notify.ios_christas_iphone
         data:
