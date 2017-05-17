@@ -18,7 +18,6 @@ automation:
     trigger:
       platform: time
       after: '07:24:00'
-      before: '09:00:00'
       weekday:
         - mon
         - tue
@@ -43,7 +42,6 @@ automation:
     trigger:
       platform: time
       after: '08:45:00'
-      before: '09:45:00'
       weekday:
         - sat
         - sun
