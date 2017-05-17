@@ -2,15 +2,10 @@ Bedroom:
   view: yes
   entities:
     - group.bedroom_lights
-    - scene.bedroom_nightlight
-    - scene.bedroom_bedtime
-    - sensor.bedroom_temperature
-    - sensor.bedroom_humidity
     - script.wakeup
 
 bedroom_lights:
   entities:
     - light.fan_light
     - light.headboard
-    - switch.nightstand
     - light.closet
