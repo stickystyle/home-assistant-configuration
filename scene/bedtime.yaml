@@ -48,7 +48,7 @@
     light.headboard:
       state: on
       brightness: 12
-      color: red
+      rgb_color: 254,72,15
     light.hallway_light_1:
       state: on
       brightness: 4
