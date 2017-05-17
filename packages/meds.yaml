@@ -1,0 +1,32 @@
+input_boolean:
+  meds_taken:
+    name: Meds have been taken
+    initial: off
+
+automation:
+  - alias: Reset meds taken
+    trigger:
+      platform: state
+      entity_id: input_boolean.meds_taken
+      to: 'on'
+      for:
+        hours: 1
+    action:
+      service: input_boolean.turn_off
+
+  - alias: Meds have not been taken
+    trigger:
+      platform: time
+      after: '07:24:00'
+    condition:
+      condition: state
+      entity_id: input_boolean.meds_taken
+    action:
+      - service: notify.ios_christas_iphone
+        data:
+          title: "Morning Meds"
+          message: "Tucker's morning meds have not been taken!"
+      - service: notify.ios_ryans_iphone
+        data:
+          title: "Morning Meds"
+          message: "Tucker's morning meds have not been taken!"
