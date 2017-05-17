@@ -14,11 +14,23 @@ wakeup:
         transition: 900
     - delay:
         minutes: 15
-    # Need to use a hue scene because hass
-    # wont do transisstions with the white
-    # bulbs
-    # fan_light_1, fan_light_2 + 15min transistion
-    - service: light.hue_activate_scene
+    - service: light.turn_on
       data:
-        group_name: "HueBedroom"
-        scene_name: "goodmorning"
+        entity_id: light.headboard
+        brightness: 255
+        rgb_color: [246,251,255]
+        transition: 900
+        color_temp: 366
+    - delay:
+        minutes: 15
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.headboard
+          - light.fan_light_1
+          - light.fan_light_2
+          - light.fan_light_3
+        brightness: 255
+        rgb_color: [255,207,120]
+        transition: 900
+        color_temp: 366
