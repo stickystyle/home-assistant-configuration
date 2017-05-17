@@ -22,8 +22,3 @@ wakeup:
       data:
         group_name: "HueBedroom"
         scene_name: "goodmorning"
-    - delay:
-        minutes: 20
-    - service: switch.turn_on
-      data:
-        entity_id: switch.nightstand
