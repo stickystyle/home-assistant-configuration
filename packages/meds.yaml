@@ -19,7 +19,8 @@ automation:
       platform: time
       after: '07:24:00'
     condition:
-      conditions: and
+      condition: and
+      conditions:
         - condition: state
           entity_id: input_boolean.meds_taken
           state: 'off'
@@ -49,7 +50,8 @@ automation:
         - sat
         - sun
     condition:
-      conditions: and
+      condition: and
+      conditions:
         - condition: state
           entity_id: input_boolean.meds_taken
           state: 'off'
