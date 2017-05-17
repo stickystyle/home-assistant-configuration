@@ -46,9 +46,6 @@ automation:
     trigger:
       platform: time
       after: '08:45:00'
-      weekday:
-        - sat
-        - sun
     condition:
       condition: and
       conditions:
