@@ -44,11 +44,12 @@
       state: off
     light.fan_light:
       state: off
-      transition: 1
+      transition: 3
     light.headboard:
       state: on
       brightness: 12
       rgb_color: [254,72,15]
+      transition: 1
     light.hallway_light_1:
       state: on
       brightness: 4
