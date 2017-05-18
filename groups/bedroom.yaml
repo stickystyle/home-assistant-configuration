@@ -2,6 +2,7 @@ Bedroom:
   view: yes
   entities:
     - group.bedroom_lights
+    - switch.bedroom_flux
     - script.wakeup
 
 bedroom_lights:

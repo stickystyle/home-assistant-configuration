@@ -8,8 +8,14 @@
 #   retain: true
 #   optimistic: false
 - platform: flux
+  name: Interior Flux
   lights:
     - light.headboard
     - light.fan_light
     - light.couch
     - light.hallway
+- platform: flux
+  name: Bedroom Flux
+  lights:
+    - light.headboard
+    - light.fan_light
