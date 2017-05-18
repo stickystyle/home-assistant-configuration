@@ -3,4 +3,16 @@
   name: "Tucker's PowerBand"
   state_topic: 'room_presence'
   timeout: 5
+  away_timeout: 600
+- platform: mqtt_room
+  device_id: f74ca33698ea
+  name: "Catherine's PowerBand"
+  state_topic: 'room_presence'
+  timeout: 5
+  away_timeout: 600
+- platform: mqtt_room
+  device_id: 68526408c257
+  name: "Ryan's Apple Watch"
+  state_topic: 'room_presence'
+  timeout: 5
   away_timeout: 60
