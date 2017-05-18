@@ -4,9 +4,6 @@
       entity_id: sensor.hallway_away_mode
       from: 'False'
       to: 'True'
-    - platform: state
-      entity_id: group.two_of_us
-      from: 'home'
   action:
     - service: switch.turn_on
       data:
