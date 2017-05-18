@@ -77,8 +77,9 @@ ios:
           - identifier: 'MARK_MEDS_TAKEN'
             title: 'Mark meds as taken'
             activationMode: 'background'
-            authenticationRequired: yes
+            authenticationRequired: no
             destructive: yes
+            behavior: 'default'
 
 emulated_hue:
   type: alexa
