@@ -1,3 +1,13 @@
+# https://home-assistant.io/docs/ecosystem/ios/notifications/requesting_location_updates/
+- alias: Request update from Ryans iPhone
+  trigger:
+    platform: time
+    after: '17:05:00'
+  action:
+    service: notify.ios_ryans_iphone
+    data:
+      message: "request_location_update"
+
 - alias: Dad left work
   trigger:
     platform: state
