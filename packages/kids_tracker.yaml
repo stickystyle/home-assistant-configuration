@@ -28,27 +28,16 @@ sensor:
 # as I don't think it would be reliabe enough. Anyways, the kids will
 # be with us so our phones will set away_mode
 automation:
-  - alias: Update Tucker
+  - alias: Kids set away mode
     trigger:
-      platform: state
-      entity_id: sensor.tuckers_backpack
-      to: 'family-room'
-      from: 'away'
-    condition:
-      condition: template
-      value_template: "{{ states.climate.ac.attributes.away_mode == 'on' }}"
-    action:
-      service: climate.set_away_mode
-      data:
-        entity_id: climate.ac
-        away_mode: 'off'
-
-  - alias: Update Catherine
-    trigger:
-      platform: state
-      entity_id: sensor.catherines_backpack
-      to: 'family-room'
-      from: 'away'
+      - platform: state
+        entity_id: sensor.catherines_backpack
+        to: 'family-room'
+        from: 'away'
+      - platform: state
+        entity_id: sensor.tuckers_backpack
+        to: 'family-room'
+        from: 'away'
     condition:
       condition: template
       value_template: "{{ states.climate.ac.attributes.away_mode == 'on' }}"
