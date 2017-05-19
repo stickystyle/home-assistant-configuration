@@ -29,7 +29,7 @@ automation:
       platform: event
       event_type: ios.notification_action_fired
       event_data:
-        actionName: MARK_MEDS_TAKEN
+        actionName: 'MARK_MEDS_TAKEN'
     action:
       - service: input_boolean.turn_on
         entity_id: input_boolean.meds_taken
@@ -66,7 +66,7 @@ automation:
           message: "Tucker's morning meds have not been taken!"
           data:
             push:
-              category: "MEDS_NOT_TAKEN"
+              category: 'MEDS_NOT_TAKEN'
           
   - alias: Meds have not been taken weekend
     trigger:
@@ -97,4 +97,4 @@ automation:
           message: "Tucker's morning meds have not been taken!"
           data:
             push:
-              category: "MEDS_NOT_TAKEN"
+              category: 'MEDS_NOT_TAKEN'
