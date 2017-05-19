@@ -57,3 +57,41 @@ automation:
       data:
         entity_id: climate.ac
         away_mode: 'off'
+        
+  - alias: Kids arrived home
+    trigger:
+      - platform: state
+        entity_id: sensor.tuckers_backpack
+        to: 'family-room'
+        from: 'away'
+      - platform: state
+        entity_id: sensor.catherines_backpack
+        to: 'family-room'
+        from: 'away'
+    condition:
+      condition: time
+      after: '16:00:00'
+      before: '17:45:00'
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    action:
+      - service: notify.ios_christas_iphone
+        data:
+          title: "Kids are home"
+          message: "The kids have arrived home"
+          data:
+            push:
+              category: camera
+            entity_id: camera.family_room
+      - service: notify.ios_ryans_iphone
+        data:
+          title: "Kids are home"
+          message: "The kids have arrived home"
+          data:
+            push:
+              category: camera
+            entity_id: camera.family_room
