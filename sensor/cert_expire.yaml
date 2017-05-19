@@ -6,3 +6,5 @@
   host: b2b.corelogicllc.com
 - platform: cert_expiry
   host: citrix.freightlogistics.com
+- platform: cert_expiry
+  host: signature.freightlogistics.com
