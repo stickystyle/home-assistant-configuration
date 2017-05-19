@@ -1,0 +1,59 @@
+sensor:
+  - platform: mqtt_room
+    device_id: f8e8875d2474
+    name: "Tucker's PowerBand"
+    state_topic: 'room_presence'
+    timeout: 5
+    away_timeout: 60
+  - platform: mqtt_room
+    device_id: f74ca33698ea
+    name: "Catherine's PowerBand"
+    state_topic: 'room_presence'
+    timeout: 5
+    away_timeout: 60
+  - platform: mqtt_room
+    device_id: 0cf3ee00b99e
+    name: "Catherine's Backpack"
+    state_topic: 'room_presence'
+    timeout: 5
+    away_timeout: 60
+  - platform: mqtt_room
+    device_id: 0cf3ee00b974
+    name: "Tucker's Backpack"
+    state_topic: 'room_presence'
+    timeout: 5
+    away_timeout: 60
+
+# Not going to have an automation to turn away_mode on with these
+# as I don't think it would be reliabe enough. Anyways, the kids will
+# be with us so our phones will set away_mode
+automation:
+  - alias: Update Tucker
+    trigger:
+      platform: state
+      entity_id: sensor.tuckers_backpack
+      to: 'family-room'
+      from: 'away'
+    condition:
+      condition: template
+      value_template: "{{ states.climate.ac.attributes.away_mode == 'on' }}"
+    action:
+      service: climate.set_away_mode
+      data:
+        entity_id: climate.ac
+        away_mode: 'off'
+
+  - alias: Update Catherine
+    trigger:
+      platform: state
+      entity_id: sensor.catherines_backpack
+      to: 'family-room'
+      from: 'away'
+    condition:
+      condition: template
+      value_template: "{{ states.climate.ac.attributes.away_mode == 'on' }}"
+    action:
+      service: climate.set_away_mode
+      data:
+        entity_id: climate.ac
+        away_mode: 'off'
