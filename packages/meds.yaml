@@ -56,10 +56,13 @@ automation:
             - thu
             - fri
     action:
-      # - service: notify.ios_christas_iphone
-      #   data:
-      #     title: "Morning Meds"
-      #     message: "Tucker's morning meds have not been taken!"
+      - service: notify.ios_christas_iphone
+        data:
+          title: "Morning Meds"
+          message: "Tucker's morning meds have not been taken!"
+          data:
+            push:
+              category: 'MEDS_NOT_TAKEN'
       - service: notify.ios_ryans_iphone
         data:
           title: "Morning Meds"
@@ -87,10 +90,13 @@ automation:
             - sat
             - sun
     action:
-      # - service: notify.ios_christas_iphone
-      #   data:
-      #     title: "Morning Meds"
-      #     message: "Tucker's morning meds have not been taken!"
+      - service: notify.ios_christas_iphone
+        data:
+          title: "Morning Meds"
+          message: "Tucker's morning meds have not been taken!"
+          data:
+            push:
+              category: 'MEDS_NOT_TAKEN'
       - service: notify.ios_ryans_iphone
         data:
           title: "Morning Meds"
