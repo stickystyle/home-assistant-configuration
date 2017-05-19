@@ -4,7 +4,4 @@ System:
     - sensor.config_changes_to_be_applied
     - sensor.travis_build_status
     - sensor.netdata
-    - sensor.catherines_backpack
-    - sensor.catherines_powerband
-    - sensor.tuckers_powerband
-    - sensor.tuckers_backpack
+    - group.kids
