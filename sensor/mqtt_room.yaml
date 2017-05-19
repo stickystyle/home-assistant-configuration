@@ -11,8 +11,14 @@
   timeout: 5
   away_timeout: 600
 - platform: mqtt_room
-  device_id: 68526408c257
-  name: "Ryan's Apple Watch"
+  device_id: 0cf3ee00b99e
+  name: "Catherine's Backpack"
+  state_topic: 'room_presence'
+  timeout: 5
+  away_timeout: 60
+- platform: mqtt_room
+  device_id: 0cf3ee00b974
+  name: "Tuckers's Backpack"
   state_topic: 'room_presence'
   timeout: 5
   away_timeout: 60
