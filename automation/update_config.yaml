@@ -3,6 +3,11 @@
     - platform: state
       entity_id: sensor.travis_build_status
       to: 'passed'
+      from: 'started'
+    - platform: state
+      entity_id: sensor.travis_build_status
+      to: 'passed'
+      from: 'failed'
   action:
     - service: notify.ios_ryans_iphone
       data:
