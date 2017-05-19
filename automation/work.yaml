@@ -46,7 +46,7 @@
   condition:
     condition: time
     after: '18:00:00'
-    before: '20:25:00'
+    before: '21:00:00'
     weekday:
       - wed
       - thu
