@@ -4,7 +4,8 @@
       state: on
       brightness: 4
     light.hallway_light_2:
-      state: off
+      state: on
+      brightness: 4
 
 - name: bedtime
   entities:
