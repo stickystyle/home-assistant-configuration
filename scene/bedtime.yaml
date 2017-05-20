@@ -1,27 +1,3 @@
-- name: bedroom_nightlight
-  entities:
-    light.fan_light:
-      state: off
-    switch.nightstand:
-      state: off
-    light.headboard:
-      state: on
-      brightness: 25
-      color_temp: 500
-      rgb_color: [116,77,25]
-
-- name: bedroom_bedtime
-  entities:
-    light.fan_light:
-      state: off
-    switch.nightstand:
-      state: off
-    light.headboard:
-      state: on
-      brightness: 55
-      color_temp: 500
-      rgb_color: [116,77,25]
-
 - name: hallway_nightlight
   entities:
     light.hallway_light_1:
