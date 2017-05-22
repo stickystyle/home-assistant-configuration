@@ -3,5 +3,5 @@
   services:
     - service: html5
       data:
-        target: "Ryan Chrome"
+        target: html5_ryan_chrome
     - service: ios_ryans_iphone
