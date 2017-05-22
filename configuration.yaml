@@ -126,6 +126,7 @@ alert:
 
 tradfri:
   host: 192.168.10.112
+  allow_tradfri_groups: False
   api_key: !secret tradfri_api_key
 
 camera:
