@@ -7,16 +7,16 @@
     - apparent_temperature_min
     - cloud_cover
     - summary
-- platform: mqtt
-  name: 'Bedroom Temperature'
-  unit_of_measurement: '°F'
-  state_topic: 'bedroom/sensor1'
-  value_template: "{{ ((float(value_json.temperature) * 9 / 5 )  +  32) | round(1) }}"
-- platform: mqtt
-  name: 'Bedroom Humidity'
-  unit_of_measurement: '%'
-  state_topic: 'bedroom/sensor1'
-  value_template: '{{ value_json.humidity }}'
+# - platform: mqtt
+#   name: 'Bedroom Temperature'
+#   unit_of_measurement: '°F'
+#   state_topic: 'bedroom/sensor1'
+#   value_template: "{{ ((float(value_json.temperature) * 9 / 5 )  +  32) | round(1) }}"
+# - platform: mqtt
+#   name: 'Bedroom Humidity'
+#   unit_of_measurement: '%'
+#   state_topic: 'bedroom/sensor1'
+#   value_template: '{{ value_json.humidity }}'
 - platform: command_line
   name: Config changes to be applied
   command: "/home/homeassistant/.homeassistant/bin/get_pending_commits_sensor.sh"
