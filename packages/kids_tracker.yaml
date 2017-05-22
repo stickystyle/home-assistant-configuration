@@ -39,8 +39,19 @@ automation:
         to: 'family-room'
         from: 'away'
     condition:
-      condition: template
-      value_template: "{{ states.climate.ac.attributes.away_mode == 'on' }}"
+      condition: and
+      conditions:
+        - condition: template
+          value_template: "{{ states.climate.ac.attributes.away_mode == 'on' }}"
+        - condition: time
+          after: '16:00:00'
+          before: '17:45:00'
+          weekday:
+            - mon
+            - tue
+            - wed
+            - thu
+            - fri
     action:
       service: climate.set_away_mode
       data:
