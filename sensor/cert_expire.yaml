@@ -1,10 +1,15 @@
 - platform: cert_expiry
   host: cruzwms.net
+  friendly_name: cruzwms.net
 - platform: cert_expiry
   host: home.theparrishfamily.net
+  friendly_name: home.theparrishfamily.net
 - platform: cert_expiry
   host: b2b.corelogicllc.com
+  friendly_name: b2b.corelogicllc.com
 - platform: cert_expiry
   host: citrix.freightlogistics.com
+  friendly_name: citrix.freightlogistics.com
 - platform: cert_expiry
   host: signature.freightlogistics.com
+  friendly_name: signature.freightlogistics.com
