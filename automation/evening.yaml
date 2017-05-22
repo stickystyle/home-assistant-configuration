@@ -12,3 +12,20 @@
     - service: scene.turn_on
       entity_id: scene.hallway_nightlight
 
+- alias: Arriving home in the evening
+  trigger:
+    - platform: state
+      entity_id: sensor.hallway_away_mode
+      state: 'False'
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        below: 3.5
+  action: 
+    - service: service.light_turn_on
+      entity_id: light.couch_light
+    - service: scene.turn_on
+      entity_id: scene.hallway_nightlight
