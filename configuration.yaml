@@ -34,6 +34,7 @@ history:
       - camera
       - ipban
       - httplogin
+      - zone
     entities:
       - sensor.dark_sky_daily_high_apparent_temperature
       - sensor.dark_sky_daily_low_apparent_temperature
@@ -50,6 +51,17 @@ history:
       - sensor.dark_sky_summary
       - sensor.ryans_iphone_battery_state
       - sensor.christas_iphone_battery_state
+      - input_boolean.meds_taken
+      - input_boolean.meds_reminder
+      - group.kids
+      - binary_sensor.ac_thermostat_has_leaf
+      - binary_sensor.ac_thermostat_is_locked
+      - binary_sensor.ac_thermostat_is_using_emergency_heat
+      - binary_sensor.ac_thermostat_online
+      - group.front_yard
+      - group.back_yard
+      - switch.bedroom_flux
+      - switch.interior_flux
 
 recorder:
   db_url: !secret recorder_db_url
