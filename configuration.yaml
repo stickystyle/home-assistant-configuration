@@ -62,6 +62,10 @@ history:
       - group.back_yard
       - switch.bedroom_flux
       - switch.interior_flux
+      - group.evening_scenes
+      - group.fli
+      - group.salon
+      - input_select.tv_media_source
 
 recorder:
   db_url: !secret recorder_db_url
