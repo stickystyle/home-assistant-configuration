@@ -43,6 +43,8 @@ history:
       - sensor.dark_sky_summary
       - sensor.ryans_iphone_battery_state
       - sensor.christas_iphone_battery_state
+      - sensor.ryan_to_home
+      - sensor.christa_to_home
       
       - binary_sensor.dark_sky_cloudy
       
