@@ -27,9 +27,7 @@ wakeup:
       data:
         entity_id:
           - light.headboard
-          - light.fan_light_1
-          - light.fan_light_2
-          - light.fan_light_3
+          - light.fan_light
         brightness: 255
         rgb_color: [255,207,120]
         transition: 900
