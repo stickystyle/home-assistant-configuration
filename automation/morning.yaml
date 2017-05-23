@@ -18,7 +18,7 @@
   action:
     - service: light.turn_on
       data:
-        entity_id: group.hallway
+        entity_id: light.hallway
         brightness: 45
     - service: light.turn_on
       data:
@@ -28,7 +28,7 @@
         minutes: 15
     - service: light.turn_on
       data:
-        entity_id: group.hallway
+        entity_id: light.hallway
         brightness: 55
     - service: light.turn_on
       data:

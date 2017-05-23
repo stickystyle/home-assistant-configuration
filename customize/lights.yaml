@@ -36,3 +36,6 @@ light.hallway_light_2:
   homebridge_hidden: true
   emulated_hue: False
   hidden: true
+light.hallway:
+  friendly_name: 'Hallway'
+  emulated_hue: True

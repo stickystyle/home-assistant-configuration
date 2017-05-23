@@ -38,33 +38,43 @@ history:
     entities:
       - sensor.dark_sky_daily_high_apparent_temperature
       - sensor.dark_sky_daily_low_apparent_temperature
-      - light.huebedroom
-      - group.living_room_motion_detection
-      - group.all_switches
-      - camera.living_room_cam
-      - input_boolean.media_select_directv
-      - sun.sun
-      - group.climate
       - sensor.travis_build_status
       - sensor.config_changes_to_be_applied
-      - binary_sensor.dark_sky_cloudy
       - sensor.dark_sky_summary
       - sensor.ryans_iphone_battery_state
       - sensor.christas_iphone_battery_state
+      
+      - binary_sensor.dark_sky_cloudy
+      
+      - light.huebedroom
+      
+      - group.living_room_motion_detection
+      - group.all_switches
+      - group.climate
+      - group.kids
+      - group.front_yard
+      - group.back_yard
+      - group.fli
+      - group.salon
+      - group.evening_scenes
+      
+      - camera.living_room_cam
+      
+      - sun.sun
+      
       - input_boolean.meds_taken
       - input_boolean.meds_reminder
-      - group.kids
+      
       - binary_sensor.ac_thermostat_has_leaf
       - binary_sensor.ac_thermostat_is_locked
       - binary_sensor.ac_thermostat_is_using_emergency_heat
       - binary_sensor.ac_thermostat_online
-      - group.front_yard
-      - group.back_yard
+      
       - switch.bedroom_flux
       - switch.interior_flux
-      - group.evening_scenes
-      - group.fli
-      - group.salon
+      
+      - input_boolean.media_select_directv
+      
       - input_select.tv_media_source
 
 recorder:
