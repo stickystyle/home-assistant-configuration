@@ -1,7 +1,9 @@
 - alias: Show evening scenes
   trigger:
-    platform: sun
-    event: sunset
+    - platform: sun
+      event: sunset
+    - platform: time
+      after: '19:30:00'
   action:
     service: group.set_visibility
     entity_id: group.evening_scenes
@@ -10,8 +12,10 @@
       
 - alias: Hide evening scenes
   trigger:
-    platform: sun
-    event: sunrise
+    - platform: sun
+      event: sunrise
+    - platform: time
+      after: '07:30:00'
   action:
     service: group.set_visibility
     entity_id: group.evening_scenes
@@ -20,8 +24,10 @@
 
 - alias: Hide exterior lights
   trigger:
-    platform: sun
-    event: sunrise
+    - platform: sun
+      event: sunrise
+    - platform: time
+      after: '07:30:00'
   action:
     service: group.set_visibility
     entity_id: group.exterior_lights
@@ -30,8 +36,10 @@
       
 - alias: Show exterior lights
   trigger:
-    platform: sun
-    event: sunset
+    - platform: sun
+      event: sunset
+    - platform: time
+      after: '19:30:00'
   action:
     service: group.set_visibility
     entity_id: group.exterior_lights
