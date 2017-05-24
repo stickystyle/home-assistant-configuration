@@ -12,6 +12,9 @@
     - condition: state
       entity_id: light.fan_light
       state: 'off'
+    - condition: time
+      after: '07:30:00'
+      before: '23:00:00'
   action:
     service: light.turn_on
     data:
@@ -28,3 +31,53 @@
   action:
     service: service.light_turn_off
     entity_id: light.fan_light
+
+- alias: Turn up headboard bedroom light when there is movement at night
+  trigger:
+    platform: state
+    entity_id: binary_sensor.bedroom_motion
+    state: 'on'
+    for:
+      seconds: 7
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: sensor.hallway_away_mode
+      state: 'False'
+    - condition: state
+      entity_id: light.headboard
+      state: 'on'
+    - condition: time
+      after: '00:00:00'
+      before: '06:00:00'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.headboard
+        brightness: 120
+   
+- alias: Turn down the bedroom headboard at night
+  trigger:
+    platform: state
+    entity_id: binary_sensor.bedroom_motion
+    state: 'off'
+    for:
+      minutes: 3
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: sensor.hallway_away_mode
+      state: 'False'
+    - condition: state
+      entity_id: light.headboard
+      state: 'on'
+    - condition: time
+      after: '00:00:00'
+      before: '06:00:00'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.headboard
+        brightness: 50
