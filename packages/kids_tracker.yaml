@@ -24,6 +24,13 @@ sensor:
     timeout: 5
     away_timeout: 600
 
+group:
+  kids_backpacks:
+    name: Kids Backpacks
+    entities:
+      - sensor.tuckers_backpack
+      - sensor.catherines_backpack
+
 # Not going to have an automation to turn away_mode on with these
 # as I don't think it would be reliabe enough. Anyways, the kids will
 # be with us so our phones will set away_mode
