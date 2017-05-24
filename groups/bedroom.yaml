@@ -3,6 +3,7 @@ Bedroom:
   entities:
     - group.bedroom_lights
     - switch.bedroom_flux
+    - binary_sensor.bedroom_motion
     - script.wakeup
 
 bedroom_lights:

@@ -36,9 +36,6 @@
     - timeleft
     - bcharge
     - status
-- platform: mqtt
-  name: 'Bedroom Motion'
-  state_topic: 'bedroom/motion/status'
 # - platform: usps
 #   username: !secret sensor_usps_username
 #   password: !secret sensor_usps_password
