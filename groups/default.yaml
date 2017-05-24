@@ -1,8 +1,6 @@
 default_view:
   view: yes
   entities:
-    - sensor.dark_sky_cloud_coverage
-    - sensor.dark_sky_summary
     - device_tracker.ryans_iphone
     - device_tracker.christas_iphone
     - group.climate
