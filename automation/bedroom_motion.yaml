@@ -13,9 +13,9 @@
       entity_id: light.fan_light
       state: 'off'
   action:
-    service: service.light_turn_on
-    entity_id: light.fan_light
+    service: light.turn_on
     data:
+      entity_id: light.fan_light
       brightness: 120
 
 - alias: Turn off bedroom light 30 minutes after last movement
