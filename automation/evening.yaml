@@ -15,8 +15,11 @@
 - alias: Arriving home in the evening
   trigger:
     - platform: state
-      entity_id: sensor.hallway_away_mode
-      state: 'False'
+      entity_id: device_tracker.ryans_iphone
+      to: 'home'
+    - platform: state
+      entity_id: device_tracker.christas_iphone
+      to: 'home'
   condition:
     condition: and
     conditions:
@@ -24,6 +27,9 @@
         entity_id: sun.sun
         value_template: '{{ state.attributes.elevation }}'
         below: 3.5
+      - condition: state
+        entity_id: sensor.hallway_away_mode
+        state: 'True'
   action: 
     - service: service.light_turn_on
       entity_id: light.couch_light
