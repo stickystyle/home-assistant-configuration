@@ -1,7 +1,7 @@
 - alias: Turn on bedroom light when there is movement
   trigger:
     platform: state
-    entity_id: sensor.motion_sensor
+    entity_id: binary_sensor.bedroom_motion
     state: 'on'
   condition:
     condition: and
@@ -21,7 +21,7 @@
 - alias: Turn off bedroom light 30 minutes after last movement
   trigger:
     platform: state
-    entity_id: sensor.motion_sensor
+    entity_id: binary_sensor.bedroom_motion
     state: 'off'
     for:
       minutes: 30
