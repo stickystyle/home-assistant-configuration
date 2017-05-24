@@ -1,0 +1,30 @@
+- alias: Turn on bedroom light when there is movement
+  trigger:
+    platform: state
+    entity_id: sensor.motion_sensor
+    state: 'on'
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: sensor.hallway_away_mode
+      state: 'False'
+    - condition: state
+      entity_id: light.fan_light
+      state: 'off'
+  action:
+    service: service.light_turn_on
+    entity_id: light.fan_light
+    data:
+      brightness: 120
+
+- alias: Turn off bedroom light 30 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: sensor.motion_sensor
+    state: 'off'
+    for:
+      minutes: 30
+  action:
+    service: service.light_turn_off
+    entity_id: light.fan_light
