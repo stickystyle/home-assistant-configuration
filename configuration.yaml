@@ -92,6 +92,13 @@ logger:
     requests.packages.urllib3.connectionpool: critical
 
 logbook:
+  exclude:
+    entities:
+      - sensor.catherines_backpack
+      - sensor.tuckers_backpack
+      - sensor.catherines_powerband
+      - sensor.tuckers_powerband
+      - binary_sensor.bedroom_motion
 
 sun:
 
