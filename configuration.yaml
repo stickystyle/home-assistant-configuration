@@ -60,6 +60,7 @@ history:
       - group.salon
       - group.evening_scenes
       - group.bedroom_motion_control
+      - group.bedroom_lights
       
       - camera.living_room_cam
       
