@@ -59,6 +59,7 @@ history:
       - group.fli
       - group.salon
       - group.evening_scenes
+      - group.bedroom_motion_control
       
       - camera.living_room_cam
       
@@ -78,6 +79,13 @@ history:
       - input_boolean.media_select_directv
       
       - input_select.tv_media_source
+      
+      - input_slider.bedroom_motion_timeout
+      - input_slider.bedroom_motion_light_on
+      - input_slider.bedroom_motion_start_hour
+      - input_slider.bedroom_motion_start_min
+      - input_slider.bedroom_motion_stop_hour
+      - input_slider.bedroom_motion_stop_min
 
 recorder:
   db_url: !secret recorder_db_url
