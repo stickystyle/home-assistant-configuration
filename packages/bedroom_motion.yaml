@@ -1,0 +1,154 @@
+group:
+  bedroom_motion_control:
+    entities:
+      - input_boolean.bedroom_motion_enabled
+      - input_slider.bedroom_motion_timeout
+      - input_slider.bedroom_motion_light_on
+      - input_slider.bedroom_motion_start_hour
+      - input_slider.bedroom_motion_start_min
+      - input_slider.bedroom_motion_stop_hour
+      - input_slider.bedroom_motion_stop_min
+
+input_slider:
+  bedroom_motion_timeout:
+    name: Motion Timeout
+    initial: 5
+    min: 1
+    max: 180
+    step: 1
+    
+  bedroom_motion_light_on:
+    name: Light on
+    initial: 15
+    min: 1
+    max: 45
+    step: 1
+    
+  bedroom_motion_start_hour:
+    initial: 7
+    min: 0
+    max: 23
+    step: 1
+    
+  bedroom_motion_start_min:
+    initial: 30
+    min: 0
+    max: 59
+    step: 5
+    
+  bedroom_motion_stop_hour:
+    initial: 20
+    min: 0
+    max: 23
+    step: 1
+    
+  bedroom_motion_stop_min:
+    initial: 0
+    min: 0
+    max: 59
+    step: 5
+    
+input_boolean:
+  bedroom_motion_enabled:
+    name: Bedroom Motion Enabled
+    initial: False
+    
+  bedroom_motion_light_on:
+    initial: False
+    
+# automation:
+  # - alias: Turn on bedroom light when there is movement
+  #   trigger:
+  #     platform: state
+  #     entity_id: binary_sensor.bedroom_motion
+  #     state: 'on'
+  #   condition:
+  #     condition: and
+  #     conditions:
+  #     - condition: state
+  #       entity_id: sensor.hallway_away_mode
+  #       state: 'False'
+  #     - condition: state
+  #       entity_id: light.fan_light
+  #       state: 'off'
+  #     - condition: time
+  #       after: '07:30:00'
+  #       before: '21:00:00'
+  #     - condition: state
+  #       entity_id: input_boolean.bedroom_motion_enabled
+  #       state: True
+  #   action:
+  #     service: light.turn_on
+  #     data:
+  #       entity_id: light.fan_light
+  #       brightness: 120
+
+  # - alias: Turn off bedroom light after period
+  #   trigger:
+  #     platform: state
+  #     entity_id: binary_sensor.bedroom_motion
+  #     state: 'off'
+  #     for:
+  #       minutes: 30
+  #   condition:
+  #     condition: and
+  #     conditions:
+  #       - condition: state
+  #         entity_id: input_boolean.bedroom_motion_enabled
+  #         state: True
+  #   action:
+  #     service: service.light_turn_off
+  #     entity_id: light.fan_light
+
+  # - alias: Turn up headboard bedroom light when there is movement at night
+  #   trigger:
+  #     platform: state
+  #     entity_id: binary_sensor.bedroom_motion
+  #     state: 'on'
+  #     for:
+  #       seconds: 7
+  #   condition:
+  #     condition: and
+  #     conditions:
+  #     - condition: state
+  #       entity_id: sensor.hallway_away_mode
+  #       state: 'False'
+  #     - condition: state
+  #       entity_id: light.headboard
+  #       state: 'on'
+  #     - condition: time
+  #       after: '00:00:00'
+  #       before: '06:00:00'
+  #     - condition: state
+  #       entity_id: input_boolean.bedroom_motion_enabled
+  #       state: True
+  #   action:
+  #     - service: light.turn_on
+  #       data:
+  #         entity_id: light.headboard
+  #         brightness: 120
+  #
+  # - alias: Turn down the bedroom headboard at night
+  #   trigger:
+  #     platform: state
+  #     entity_id: binary_sensor.bedroom_motion
+  #     state: 'off'
+  #     for:
+  #       minutes: 3
+  #   condition:
+  #     condition: and
+  #     conditions:
+  #     - condition: state
+  #       entity_id: sensor.hallway_away_mode
+  #       state: 'False'
+  #     - condition: state
+  #       entity_id: light.headboard
+  #       state: 'on'
+  #     - condition: time
+  #       after: '00:00:00'
+  #       before: '06:00:00'
+  #   action:
+  #     - service: light.turn_on
+  #       data:
+  #         entity_id: light.headboard
+  #         brightness: 50
