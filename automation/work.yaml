@@ -14,15 +14,20 @@
     entity_id: device_tracker.ryans_iphone
     from: !secret zone_fli_name
   condition:
-    condition: time
-    after: '16:55:00'
-    before: '17:45:00'
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    condition: and
+    conditions:
+      - condition: time
+        after: '16:55:00'
+        before: '17:45:00'
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
   action:
     - service: notify.ios_ryans_iphone
       data:
@@ -35,12 +40,20 @@
     entity_id: device_tracker.ryans_iphone
     from: !secret zone_fli_name
   condition:
-    condition: time
-    after: '16:55:00'
-    before: '17:45:00'
-    weekday:
-      - mon
-      - tue
+    condition: and
+    conditions:
+      - condition: time
+        after: '16:55:00'
+        before: '17:45:00'
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
   action:
     - service: notify.ios_christas_iphone
       data:
@@ -54,14 +67,19 @@
     entity_id: device_tracker.christas_iphone
     from: !secret zone_salon_name
   condition:
-    condition: time
-    after: '18:00:00'
-    before: '21:00:00'
-    weekday:
-      - wed
-      - thu
-      - fri
-      - sat
+    condition: and
+    conditions:
+      - condition: time
+        after: '18:00:00'
+        before: '21:00:00'
+        weekday:
+          - wed
+          - thu
+          - fri
+          - sat
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
   action:
     - service: notify.ios_ryans_iphone
       data:

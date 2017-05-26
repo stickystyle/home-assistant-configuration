@@ -8,3 +8,12 @@
   name: 'Bedroom Motion'
   device_class: motion
   state_topic: 'bedroom/motion/status'
+- platform: workday
+  country: US
+  workdays:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
