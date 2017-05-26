@@ -108,6 +108,8 @@ logbook:
       - sensor.catherines_powerband
       - sensor.tuckers_powerband
       - binary_sensor.bedroom_motion
+      - binary_sensor.ac_thermostat_fan
+      - group.bedroom_lights
 
 sun:
 
