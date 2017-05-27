@@ -6,5 +6,6 @@ tv_media_source:
     - Netflix
     - Hulu
     - Playstation
+    - Chromecast
   initial: Comcast
   icon: mdi:television
