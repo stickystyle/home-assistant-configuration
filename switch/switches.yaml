@@ -14,8 +14,10 @@
     - light.fan_light
     - light.couch
     - light.hallway
+    - light.closet
 - platform: flux
   name: Bedroom Flux
   lights:
     - light.headboard
     - light.fan_light
+    - light.closet
