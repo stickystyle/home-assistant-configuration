@@ -73,6 +73,7 @@ history:
       - binary_sensor.ac_thermostat_is_locked
       - binary_sensor.ac_thermostat_is_using_emergency_heat
       - binary_sensor.ac_thermostat_online
+      - binary_sensor.bedroom_motion
       
       - switch.bedroom_flux
       - switch.interior_flux
