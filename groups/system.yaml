@@ -5,3 +5,4 @@ System:
     - sensor.travis_build_status
     - sensor.netdata
     - group.kids
+    - shell_command.merge_pending_commits
