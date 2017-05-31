@@ -1,0 +1,6 @@
+merge_and_restart:
+  alias: Merge pending commits and restart
+  sequence:
+    - service: script.turn_on
+      entity_id: merge_pending_commits
+    - service: homeassistant.restart
