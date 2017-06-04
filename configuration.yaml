@@ -139,16 +139,10 @@ emulated_hue:
     - media_player
 
 mqtt:
-
-# mqtt:
-#   broker: 127.0.0.1
-#   port: 1883
-#   client_id: home-assistant-1
-#   discovery: true
-#   username: !secret mqtt_username
-#   password: !secret mqtt_password
-
-
+  broker: 192.168.10.200
+  port: 1883
+  client_id: home-assistant-1
+  discovery: true
 
 device_tracker:
   - platform: nmap_tracker
