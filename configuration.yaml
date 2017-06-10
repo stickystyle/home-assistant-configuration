@@ -111,6 +111,7 @@ logbook:
       - binary_sensor.bedroom_motion
       - binary_sensor.ac_thermostat_fan
       - group.bedroom_lights
+      - sensor.dark_sky_summary
 
 sun:
 
