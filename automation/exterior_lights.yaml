@@ -33,7 +33,7 @@
   trigger:
     platform: state
     entity_id: sensor.dark_sky_cloudy
-    state: 'on'
+    to: 'on'
     for:
       minutes: 5
   action:
@@ -47,7 +47,7 @@
   trigger:
     platform: state
     entity_id: sensor.dark_sky_cloudy
-    state: 'off'
+    to: 'off'
     for:
       minutes: 15
   condition:
