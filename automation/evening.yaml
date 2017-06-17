@@ -1,7 +1,7 @@
 - alias: Hallway in evening
   trigger:
     - platform: time
-      after: '20:30:00'
+      at: '20:30:00'
     - platform: sun
       event: sunset
   condition:

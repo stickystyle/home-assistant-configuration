@@ -3,7 +3,7 @@
   initial_state: False
   trigger:
     platform: time
-    after: '23:30:00'
+    at: '23:30:00'
   action:
     service: scene.turn_on
     entity_id: scene.bedroom_bedtime

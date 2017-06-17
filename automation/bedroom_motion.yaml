@@ -13,7 +13,7 @@
 #       entity_id: light.fan_light
 #       state: 'off'
 #     - condition: time
-#       after: '07:30:00'
+#       at: '07:30:00'
 #       before: '23:00:00'
 #   action:
 #     service: light.turn_on
@@ -21,7 +21,7 @@
 #       entity_id: light.fan_light
 #       brightness: 120
 #
-# - alias: Turn off bedroom light 30 minutes after last movement
+# - alias: Turn off bedroom light 30 minutes at last movement
 #   trigger:
 #     platform: state
 #     entity_id: binary_sensor.bedroom_motion
@@ -49,7 +49,7 @@
 #       entity_id: light.headboard
 #       state: 'on'
 #     - condition: time
-#       after: '00:00:00'
+#       at: '00:00:00'
 #       before: '06:00:00'
 #   action:
 #     - service: light.turn_on
@@ -74,7 +74,7 @@
 #       entity_id: light.headboard
 #       state: 'on'
 #     - condition: time
-#       after: '00:00:00'
+#       at: '00:00:00'
 #       before: '06:00:00'
 #   action:
 #     - service: light.turn_on

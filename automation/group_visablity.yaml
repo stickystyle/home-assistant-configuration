@@ -3,7 +3,7 @@
     - platform: sun
       event: sunset
     - platform: time
-      after: '19:30:00'
+      at: '19:30:00'
   action:
     service: group.set_visibility
     entity_id: group.evening_scenes
@@ -15,7 +15,7 @@
     - platform: sun
       event: sunrise
     - platform: time
-      after: '07:30:00'
+      at: '07:30:00'
   action:
     service: group.set_visibility
     entity_id: group.evening_scenes
@@ -27,7 +27,7 @@
     - platform: sun
       event: sunrise
     - platform: time
-      after: '07:30:00'
+      at: '07:30:00'
   action:
     service: group.set_visibility
     entity_id: group.exterior_lights
@@ -39,7 +39,7 @@
     - platform: sun
       event: sunset
     - platform: time
-      after: '19:30:00'
+      at: '19:30:00'
   action:
     service: group.set_visibility
     entity_id: group.exterior_lights
