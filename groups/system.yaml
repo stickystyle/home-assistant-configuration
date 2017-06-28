@@ -1,8 +1,0 @@
-System:
-  view: yes
-  entities:
-    - sensor.config_changes_to_be_applied
-    - sensor.travis_build_status
-    - sensor.netdata
-    - group.kids
-    - shell_command.merge_pending_commits

@@ -1,0 +1,116 @@
+default_view:
+  view: yes
+  entities:
+    - device_tracker.ryans_iphone
+    - device_tracker.christas_iphone
+    - group.climate
+    - group.family_room
+    - group.exterior_lights
+    - light.hallway
+    - switch.flux
+    - group.family_room_camera
+    - media_player.family_room_tv
+    - media_player.plex
+    - group.evening_scenes
+    - group.meds_reminder
+
+Back Yard:
+  view: no
+  entities:
+    - light.back_porch
+
+Bedroom:
+  view: yes
+  entities:
+    - group.bedroom_lights
+    - switch.bedroom_flux
+    - binary_sensor.bedroom_motion
+    - script.wakeup
+    - group.bedroom_motion_control
+
+bedroom_lights:
+  entities:
+    - light.fan_light
+    - light.headboard
+    - light.closet
+    
+climate:
+  name: Climate
+  entities:
+    - climate.ac
+    - sensor.dark_sky_apparent_temperature
+
+Exterior Lights:
+  view: No
+  entities:
+    - light.front_door
+    - light.back_door
+    
+Family Room Camera:
+  entities:
+    - camera.family_room
+    - switch.family_room_motion
+    
+Family Room:
+  view: no
+  entities:
+    - light.couch
+    - switch.family_room_light
+    
+Front Yard:
+  view: no
+  entities:
+    - light.front_porch
+    
+Interior Lights:
+  view: Yes
+  entities:
+    - light.hallway
+    - light.couch
+    - light.fan_light
+    - light.headboard
+    - light.closet
+    - light.laundry_room_light
+    - switch.family_room_light
+    
+Two of Us:
+  entities:
+    - device_tracker.ryans_iphone
+    - device_tracker.christas_iphone
+    
+Kids:
+  entities:
+    - sensor.catherines_backpack
+    - sensor.catherines_powerband
+    - sensor.tuckers_powerband
+    - sensor.tuckers_backpack
+    
+Evening Scenes:
+  entities:
+    - scene.bedtime
+    - scene.hallway_nightlight
+    
+System:
+  view: yes
+  entities:
+    - sensor.config_changes_to_be_applied
+    - sensor.travis_build_status
+    - sensor.netdata
+    - group.kids
+    - shell_command.merge_pending_commits
+    
+Travel Times:
+  view: yes
+  entities:
+    - sensor.christa_to_home
+    - sensor.ryan_to_home
+    
+Salon:
+  entities:
+    - sensor.salon_to_home
+    - sensor.home_to_salon
+    
+FLI:
+  entities:
+    - sensor.fli_to_home
+    - sensor.home_to_fli

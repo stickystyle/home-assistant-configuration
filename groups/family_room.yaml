@@ -1,5 +1,0 @@
-Family Room:
-  view: no
-  entities:
-    - light.couch
-    - switch.family_room_light

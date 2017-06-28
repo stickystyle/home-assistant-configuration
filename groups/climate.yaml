@@ -1,5 +1,0 @@
-climate:
-  name: Climate
-  entities:
-    - climate.ac
-    - sensor.dark_sky_apparent_temperature
