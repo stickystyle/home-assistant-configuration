@@ -1,0 +1,18 @@
+- platform: plex
+  entity_namespace: 'plex'
+  include_non_clients: false
+- platform: webostv
+  name: Family Room TV
+  host: 192.168.10.114
+  mac: E4:3E:D7:4D:66:D3
+  customize:
+    sources:
+      - Xfinity
+      - Chromecast
+      - Plex
+      - Netflix
+      - Hulu
+      - Playstation
+- platform: spotify
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_client_secret

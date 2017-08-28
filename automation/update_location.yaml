@@ -1,0 +1,9 @@
+- alias: Update location when car arrives somewhere known
+  trigger:
+    platform: state
+    entity_id: device_tracker.ryans_iphone
+    from: 'not_home'
+  action:
+    service: notify.ios_ryans_iphone
+    data:
+      message: "request_location_update"
