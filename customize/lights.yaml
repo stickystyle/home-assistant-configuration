@@ -11,7 +11,7 @@ light.fan_light_3:
   emulated_hue: False
   hidden: true
 light.fan_light:
-  friendly_name: 'Fan Light'
+  friendly_name: 'Bed Light'
   emulated_hue: True
 light.front_door:
   friendly_name: 'Front Door Light'

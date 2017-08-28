@@ -20,7 +20,6 @@ wakeup:
         brightness: 255
         rgb_color: [246,251,255]
         transition: 900
-        color_temp: 366
     - delay:
         minutes: 15
     - service: light.turn_on
@@ -31,4 +30,3 @@ wakeup:
         brightness: 255
         rgb_color: [255,207,120]
         transition: 900
-        color_temp: 366

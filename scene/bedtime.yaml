@@ -17,19 +17,17 @@
       state: off
     light.laundry_room:
       state: off
-    switch.nightstand:
-      state: off
     light.fan_light:
       state: off
       transition: 3
     light.headboard:
       state: on
-      brightness: 50
+      brightness_pct: 8 
       rgb_color: [215,5,20]
-      color_temp: 153
       transition: 1
     light.hallway_light_1:
-      state: on
-      brightness: 4
+      state: off
     light.hallway_light_2:
+      state: off
+    switch.bedroom_flux:
       state: off

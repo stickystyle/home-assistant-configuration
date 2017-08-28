@@ -19,6 +19,8 @@ http:
 
 updater:
   
+config:
+  
 discovery:
   ignore:
     - plex_mediaserver
@@ -94,10 +96,10 @@ recorder:
 
 influxdb:
   host: 192.168.10.200
-  port: 32773
+  port: 8086
 
 logger:
-  default: warning
+  default: warn
   logs:
     requests.packages.urllib3.connectionpool: critical
 
@@ -132,7 +134,7 @@ ios:
 
 emulated_hue:
   type: alexa
-  host_ip: 192.168.10.118
+  host_ip: 192.168.10.200
   expose_by_default: false
   exposed_domains:
     - light
@@ -150,7 +152,7 @@ device_tracker:
     hosts: 192.168.10.1/24
     track_new_devices: no
     exclude:
-      - 192.168.10.118
+      - 192.168.10.200
       - 192.168.10.122
 
 nest:
@@ -176,20 +178,41 @@ tradfri:
   api_key: !secret tradfri_api_key
 
 camera:
-  - platform: mjpeg
-    name: Family Room
-    mjpeg_url: http://192.168.10.200:8081
+  - platform: foscam
+    ip: 192.168.10.153 
+    username: !secret camera_foscam_user
+    password: !secret camera_foscam_passwd
+  - platform: ffmpeg
+    name: MyCamera
+    input: !secret foscam_temp 
 
-# image_processing:
-#   - platform: dlib_face_detect
-#     source:
-#       - entity_id: camera.family_room
+#image_processing:
+#  - platform: microsoft_face_detect
+#    source:
+#      - entity_id: camera.kitchen
+
+#microsoft_face:
+#  api_key: 04770e74c3004cae98314d1c93abdfd5
+#  azure_region: westcentralus
+
+input_select:
+  tv_media_source:
+    name: Media Source
+    options:
+      - Comcast
+      - Plex
+      - Netflix
+      - Hulu
+      - Playstation
+      - Chromecast
+    initial: Comcast
+    icon: mdi:television
 
 
 automation: !include_dir_merge_list automation
 group: !include groups.yaml
 # input_boolean: !include_dir_merge_named input_boolean
-input_select: !include_dir_merge_named input_select
+# input_select: !include_dir_merge_list input_select
 light: !include_dir_merge_list light
 media_player: !include_dir_merge_list media_player
 notify: !include_dir_merge_list notify

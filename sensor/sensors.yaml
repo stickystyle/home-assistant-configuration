@@ -19,13 +19,18 @@
 #   state_topic: 'bedroom/sensor1'
 #   value_template: '{{ value_json.humidity }}'
 #   expire_after: 300
-- platform: command_line
-  name: Config changes to be applied
-  command: "/home/homeassistant/.homeassistant/bin/get_pending_commits_sensor.sh"
+# - platform: command_line
+#   name: Config changes to be applied
+#   command: "/home/homeassistant/.homeassistant/bin/get_pending_commits_sensor.sh"
 - platform: netdata
+  host: 192.168.10.200
   resources:
     - memory_free
+    - memory_used
+    - memory_cached
     - system_load
+    - system_io_in
+    - system_io_out
 - platform: template
   sensors:
     hallway_away_mode:
@@ -48,3 +53,5 @@
 # - platform: crimereports
 #   name: Crime around home
 #   radius: 500
+- platform: plex
+  host: 192.168.10.200

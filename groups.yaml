@@ -1,116 +1,102 @@
 default_view:
-  view: yes
+  view: true
   entities:
-    - device_tracker.ryans_iphone
-    - device_tracker.christas_iphone
-    - group.climate
-    - group.family_room
-    - group.exterior_lights
-    - light.hallway
-    - switch.flux
-    - group.family_room_camera
-    - media_player.family_room_tv
-    - media_player.plex
-    - group.evening_scenes
-    - group.meds_reminder
-
-Back Yard:
-  view: no
+  - device_tracker.ryans_iphone
+  - device_tracker.christas_iphone
+  - sensor.plex
+  - group.climate
+  - group.family_room
+  - group.exterior_lights
+  - light.hallway
+  - group.family_room_camera
+  - media_player.family_room_tv
+  - media_player.plex
+  - media_player.spotify
+  - group.evening_scenes
+  - group.meds_reminder
+  - camera.foscam_camera
+  - camera.mycamera
+  name: default_view
+Interior Lights:
+  view: true
   entities:
-    - light.back_porch
-
+  - light.hallway
+  - light.couch
+  - light.fan_light
+  - light.headboard
+  - light.closet
+  - light.laundry_room_light
+  - switch.family_room_light
 Bedroom:
-  view: yes
+  view: true
   entities:
-    - group.bedroom_lights
-    - switch.bedroom_flux
-    - binary_sensor.bedroom_motion
-    - script.wakeup
-    - group.bedroom_motion_control
-
+  - group.bedroom_lights
+  - switch.bedroom_flux
+  - binary_sensor.bedroom_motion
+  - script.wakeup
+  - group.bedroom_motion_control
+System:
+  view: true
+  entities:
+  - sensor.config_changes_to_be_applied
+  - sensor.travis_build_status
+  - sensor.netdata
+  - group.kids
+  - shell_command.merge_pending_commits
+  - group.all_automations
+Travel Times:
+  view: true
+  entities:
+  - sensor.christa_to_home
+  - sensor.ryan_to_home
+Back Yard:
+  entities:
+  - light.back_door
 bedroom_lights:
   entities:
-    - light.fan_light
-    - light.headboard
-    - light.closet
-    
+  - light.fan_light
+  - light.headboard
+  - light.closet
 climate:
   name: Climate
   entities:
-    - climate.ac
-    - sensor.dark_sky_apparent_temperature
-
+  - climate.ac
+  - sensor.dark_sky_apparent_temperature
 Exterior Lights:
-  view: No
   entities:
-    - light.front_door
-    - light.back_door
-    
+  - light.front_door
+  - light.back_door
 Family Room Camera:
   entities:
-    - camera.family_room
-    - switch.family_room_motion
-    
+  - camera.family_room
+  - switch.family_room_motion
 Family Room:
-  view: no
+  view: false
   entities:
-    - light.couch
-    - switch.family_room_light
-    
+  - light.couch
+  - switch.family_room_light
 Front Yard:
-  view: no
   entities:
-    - light.front_porch
-    
-Interior Lights:
-  view: Yes
-  entities:
-    - light.hallway
-    - light.couch
-    - light.fan_light
-    - light.headboard
-    - light.closet
-    - light.laundry_room_light
-    - switch.family_room_light
-    
+  - light.front_door
 Two of Us:
   entities:
-    - device_tracker.ryans_iphone
-    - device_tracker.christas_iphone
-    
+  - device_tracker.ryans_iphone
+  - device_tracker.christas_iphone
 Kids:
   entities:
-    - sensor.catherines_backpack
-    - sensor.catherines_powerband
-    - sensor.tuckers_powerband
-    - sensor.tuckers_backpack
-    
+  - sensor.catherines_backpack
+  - sensor.catherines_powerband
+  - sensor.tuckers_powerband
+  - sensor.tuckers_backpack
 Evening Scenes:
   entities:
-    - scene.bedtime
-    - scene.hallway_nightlight
-    
-System:
-  view: yes
-  entities:
-    - sensor.config_changes_to_be_applied
-    - sensor.travis_build_status
-    - sensor.netdata
-    - group.kids
-    - shell_command.merge_pending_commits
-    
-Travel Times:
-  view: yes
-  entities:
-    - sensor.christa_to_home
-    - sensor.ryan_to_home
-    
+  - scene.bedtime
+  - scene.hallway_nightlight
 Salon:
   entities:
-    - sensor.salon_to_home
-    - sensor.home_to_salon
-    
+  - sensor.salon_to_home
+  - sensor.home_to_salon
 FLI:
   entities:
-    - sensor.fli_to_home
-    - sensor.home_to_fli
+  - sensor.fli_to_home
+  - sensor.home_to_fli

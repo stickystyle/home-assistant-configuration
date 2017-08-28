@@ -17,5 +17,7 @@ group.interior_lights:
   icon: mdi:lightbulb
   friendly_name: 'Interior Lights'
   emulated_hue: True
-
+group.all_automations:
+  friendly_name: All Automations
+  hidden: false
 

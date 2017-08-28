@@ -1,7 +1,5 @@
 merge_and_restart:
   alias: Merge pending commits and restart
   sequence:
-    - service: shell_command.turn_on
-      data:
-        entity_id: shell_command.merge_pending_commits
+    - service: shell_command.merge_pending_commits
     - service: homeassistant.restart
