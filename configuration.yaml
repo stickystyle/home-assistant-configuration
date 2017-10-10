@@ -114,6 +114,7 @@ logbook:
       - binary_sensor.ac_thermostat_fan
       - group.bedroom_lights
       - sensor.dark_sky_summary
+      - image_processing.dlib_face_family_room
 
 sun:
 
@@ -178,18 +179,16 @@ tradfri:
   api_key: !secret tradfri_api_key
 
 camera:
-  - platform: foscam
-    ip: 192.168.10.153 
-    username: !secret camera_foscam_user
-    password: !secret camera_foscam_passwd
-  - platform: ffmpeg
-    name: MyCamera
-    input: !secret foscam_temp 
+  - platform: mjpeg
+    mjpeg_url: http://192.168.10.200:8889
+    name: family_room
+  - platform: usps
+    scan_interval: 5
 
-#image_processing:
-#  - platform: microsoft_face_detect
-#    source:
-#      - entity_id: camera.kitchen
+image_processing:
+  - platform: dlib_face_detect
+    source:
+      - entity_id: camera.family_room
 
 #microsoft_face:
 #  api_key: 04770e74c3004cae98314d1c93abdfd5
@@ -207,6 +206,10 @@ input_select:
       - Chromecast
     initial: Comcast
     icon: mdi:television
+
+usps:
+  username: !secret sensor_usps_username
+  password: !secret sensor_usps_password
 
 
 automation: !include_dir_merge_list automation

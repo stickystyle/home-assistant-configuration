@@ -28,3 +28,6 @@ ip_bans.yaml
 check_config.sh
 *.pickle
 *.bak
+
+usps_cache.sqlite
+homebridge/persist/
