@@ -11,21 +11,14 @@ default_view:
   - media_player.family_room_tv
   - group.evening_scenes
   - group.meds_reminder
-  - camera.usps_mail
-  - sensor.usps_mail
-  - sensor.usps_packages
   - camera.family_room
   - image_processing.dlib_face_family_room
+  - switch.family_room_camera
   name: default_view
 Interior Lights:
   view: true
   entities:
-  - light.hallway
-  - light.couch
-  - light.fan_light
-  - light.headboard
-  - light.closet
-  - light.laundry_room_light
+  - group.all_lights 
   - switch.family_room_light
 Bedroom:
   view: true
@@ -35,6 +28,12 @@ Bedroom:
   - binary_sensor.bedroom_motion
   - script.wakeup
   - group.bedroom_motion_control
+Mail:
+  view: true
+  entities:
+  - camera.usps_mail
+  - sensor.usps_mail
+  - sensor.usps_packages
 System:
   view: true
   entities:

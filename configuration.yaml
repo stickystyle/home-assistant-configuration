@@ -119,6 +119,12 @@ logbook:
 sun:
 
 zeroconf:
+
+#panel_iframe:
+#  kerberos:
+#    title: Kerberos
+#    icon: mdi:camera
+#    url: http://192.168.10.200:8078
   
 ios:
   push:
@@ -148,13 +154,13 @@ mqtt:
   client_id: home-assistant-1
   discovery: true
 
-device_tracker:
-  - platform: nmap_tracker
-    hosts: 192.168.10.1/24
-    track_new_devices: no
-    exclude:
-      - 192.168.10.200
-      - 192.168.10.122
+# device_tracker:
+#  - platform: nmap_tracker
+#    hosts: 192.168.10.1/24
+#    track_new_devices: no
+#    exclude:
+#      - 192.168.10.200
+#      - 192.168.10.122
 
 nest:
   client_id: !secret nest_client_id
@@ -183,7 +189,7 @@ camera:
     mjpeg_url: http://192.168.10.200:8889
     name: family_room
   - platform: usps
-    scan_interval: 5
+    scan_interval: 30 
 
 image_processing:
   - platform: dlib_face_detect
@@ -198,13 +204,13 @@ input_select:
   tv_media_source:
     name: Media Source
     options:
-      - Comcast
+      - Xfinity
       - Plex
       - Netflix
       - Hulu
       - Playstation
       - Chromecast
-    initial: Comcast
+    initial: Xfinity
     icon: mdi:television
 
 usps:

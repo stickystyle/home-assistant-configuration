@@ -1,8 +1,0 @@
-feed_animals:
-  alias: Feed the animals
-  sequence:
-    - service: light.turn_on
-      data:
-        entity_id:
-          - light.headboard
-        brightness: 1

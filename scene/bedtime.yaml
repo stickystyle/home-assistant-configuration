@@ -5,7 +5,7 @@
       brightness: 10
     light.hallway_light_2:
       state: on
-      brightness: 10
+      brightness: 40
 
 - name: bedtime
   entities:
@@ -25,9 +25,7 @@
       brightness_pct: 8 
       rgb_color: [215,5,20]
       transition: 1
-    light.hallway_light_1:
-      state: off
-    light.hallway_light_2:
+    light.hallway:
       state: off
     switch.bedroom_flux:
       state: off

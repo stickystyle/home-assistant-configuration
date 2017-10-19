@@ -1,0 +1,43 @@
+- alias: Enable camera when gone
+  trigger:
+    - platform: state
+      entity_id: sensor.hallway_away_mode
+      from: 'False'
+      to: 'True'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.family_room_camera
+    - service: notify.ios_ryans_iphone
+      data:
+        title: "Enabling Motion Detection"
+        message: "Nobody was home, so I turned on the camera"
+
+- alias: Disable camera when home
+  trigger:
+    - platform: state
+      entity_id: sensor.hallway_away_mode
+      from: 'True'
+      to: 'False'
+    - platform: state
+      entity_id: group.two_of_us
+      to: 'home'
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.family_room_camera
+
+# - alias: Notify when motion
+#   trigger:
+#     platform: state
+#     entity_id: binary_sensor.family_room_motion
+#     to: 'on'
+#   action:
+#     - service: notify.ios_ryans_iphone
+#       data:
+#         title: "Motion Detected!"
+#         message: "I detected motion while nobody was home!"
+#         data:
+#           push:
+#             category: camera
+#           entity_id: camera.family_room

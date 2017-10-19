@@ -1,11 +1,11 @@
 input_boolean:
   meds_taken:
     name: Meds have been taken
-    initial: 'off'
+    initial: False 
     icon: mdi:pill
   meds_reminder:
     name: Meds reminder enabled
-    initial: 'on'
+    initial: True 
 
 group:
   meds_reminder:

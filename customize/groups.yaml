@@ -20,4 +20,7 @@ group.interior_lights:
 group.all_automations:
   friendly_name: All Automations
   hidden: false
-
+group.mail:
+  icon: mdi:mailbox
+group.all_lights:
+  hidden: false

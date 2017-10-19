@@ -13,5 +13,4 @@
       data:
         entity_id: light.headboard
         brightness: 255
-        color_temp: 500
         rgb_color: [116,77,25]

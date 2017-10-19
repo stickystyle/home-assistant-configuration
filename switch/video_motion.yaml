@@ -1,8 +1,19 @@
-#- platform: command_line
-#  switches:
-#    family_room_motion:
-#      command_on: "curl -s http://192.168.10.200:8080/0/detection/start"
-#      command_off: "curl -s http://192.168.10.200:8080/0/detection/pause"
-#      command_state: "curl -s http://192.168.10.200:8080/0/detection/status|awk '{print $5}'"
-#      value_template: '{{ value == "ACTIVE" }}'
-#      friendly_name: Family Room Detection
+- platform: command_line
+  switches:
+    family_room_camera:
+      command_on: "curl -u root:root -X PUT -H 'Content-Type: application/json' -d '{\"active\": \"true\"}' -s http://192.168.10.200:8078/api/v1/condition/enabled"
+      command_off: "curl -u root:root -X PUT -H 'Content-Type: application/json' -d '{\"active\": \"false\"}' -s http://192.168.10.200:8078/api/v1/condition/enabled"
+      command_state: "curl -u root:root -s http://192.168.10.200:8078/api/v1/condition/enabled|awk -F '\"' '{print $4}'"
+      value_template: '{{ value == "true" }}'
+      friendly_name: Family Room Detection
+# rest switch doesnt' work because it doesn't send a Content-Type header
+#- platform: rest
+#  name: family_room_camera
+#  resource: 'http://192.168.10.199:8000/y9c1n8y9'
+#  friendly_name: Family Room Detection
+#  method: put
+#  username: root
+#  password: root
+#  body_on: '{"active": "true"}'
+#  body_off: '{"active": "false"}'
+#  is_on_template: '{{value_json.active}}'
