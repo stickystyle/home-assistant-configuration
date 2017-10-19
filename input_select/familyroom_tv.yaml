@@ -1,11 +1,11 @@
 tv_media_source:
   name: Media Source
   options:
-    - Comcast
+    - Xfinity
     - Plex
     - Netflix
     - Hulu
     - Playstation
     - Chromecast
-  initial: Comcast
+  initial: Xfinity
   icon: mdi:television

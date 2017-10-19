@@ -7,7 +7,7 @@
   condition:
     condition: state
     entity_id: sensor.hallway_away_mode
-    state: 'False'
+    state: False
   action:
     - service: light.turn_on
       data:

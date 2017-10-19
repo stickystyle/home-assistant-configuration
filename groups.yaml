@@ -25,9 +25,7 @@ Bedroom:
   entities:
   - group.bedroom_lights
   - switch.bedroom_flux
-  - binary_sensor.bedroom_motion
   - script.wakeup
-  - group.bedroom_motion_control
 Mail:
   view: true
   entities:
@@ -37,11 +35,8 @@ Mail:
 System:
   view: true
   entities:
-  - sensor.config_changes_to_be_applied
-  - sensor.travis_build_status
   - sensor.netdata
   - group.kids
-  - shell_command.merge_pending_commits
   - group.all_automations
 Travel Times:
   view: true
@@ -80,8 +75,6 @@ Two of Us:
 Kids:
   entities:
   - sensor.catherines_backpack
-  - sensor.catherines_powerband
-  - sensor.tuckers_powerband
   - sensor.tuckers_backpack
 Evening Scenes:
   entities:

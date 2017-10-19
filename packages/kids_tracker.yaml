@@ -1,17 +1,5 @@
 sensor:
   - platform: mqtt_room
-    device_id: f8e8875d2474
-    name: "Tucker's PowerBand"
-    state_topic: 'room_presence'
-    timeout: 5
-    away_timeout: 600
-  - platform: mqtt_room
-    device_id: f74ca33698ea
-    name: "Catherine's PowerBand"
-    state_topic: 'room_presence'
-    timeout: 5
-    away_timeout: 600
-  - platform: mqtt_room
     device_id: 0cf3ee00b99e
     name: "Catherine's Backpack"
     state_topic: 'room_presence'
@@ -23,7 +11,18 @@ sensor:
     state_topic: 'room_presence'
     timeout: 5
     away_timeout: 600
-
+  # - platform: mqtt_room
+  #   device_id: f8e8875d2474
+  #   name: "Tucker's PowerBand"
+  #   state_topic: 'room_presence'
+  #   timeout: 5
+  #   away_timeout: 600
+  # - platform: mqtt_room
+  #   device_id: f74ca33698ea
+  #   name: "Catherine's PowerBand"
+  #   state_topic: 'room_presence'
+  #   timeout: 5
+  #   away_timeout: 600
 
 input_boolean:
   kids_tracker:

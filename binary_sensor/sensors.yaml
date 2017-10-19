@@ -4,10 +4,6 @@
   entity_id: sensor.dark_sky_cloud_cover
   type: upper
   threshold: 80
-- platform: mqtt
-  name: 'Bedroom Motion'
-  device_class: motion
-  state_topic: 'bedroom/motion/status'
 - platform: workday
   country: US
   workdays:

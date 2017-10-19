@@ -1,8 +1,0 @@
-- platform: rest
-  resource: https://api.travis-ci.org/repos/stickystyle/home-assistant-configuration
-  headers:
-    User-Agent: Home Assistant
-    Accept: application/vnd.travis-ci.2+json
-  name: Travis build status
-  method: GET
-  value_template: '{{ value_json.repo.last_build_state }}'

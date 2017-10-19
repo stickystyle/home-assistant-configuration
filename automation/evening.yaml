@@ -12,6 +12,7 @@
     - service: scene.turn_on
       entity_id: scene.hallway_nightlight
 
+# this doesn't really work because the phone marks as home when we walk up to the door
 - alias: Arriving home in the evening
   trigger:
     - platform: state
