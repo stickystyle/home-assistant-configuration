@@ -1,12 +1,11 @@
 group.weather:
-  emulated_hue: false
   homebridge_hidden: true
 group.bedroom:
   homebridge_hidden: true
   icon: mdi:hotel
 group.bedroom_lights:
   friendly_name: 'Bedroom Lights'
-  emulated_hue: True
+  emulated_hue_hidden: false
 group.system:
   homebridge_hidden: true
   icon: mdi:desktop-mac
@@ -16,7 +15,7 @@ group.travel:
 group.interior_lights:
   icon: mdi:lightbulb
   friendly_name: 'Interior Lights'
-  emulated_hue: True
+  emulated_hue_hidden: false
 group.all_automations:
   friendly_name: All Automations
   hidden: false

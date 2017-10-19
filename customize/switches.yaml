@@ -1,7 +1,7 @@
 switch.family_room_light:
   icon: mdi:lightbulb
   friendly_name: "Family Room Light"
-  emulated_hue: True
+  emulated_hue_hidden: false
 switch.bedroom_switch:
   homebridge_hidden: true
   hidden: true
