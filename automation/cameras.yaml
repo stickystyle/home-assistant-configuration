@@ -2,8 +2,8 @@
   trigger:
     - platform: state
       entity_id: sensor.hallway_away_mode
-      from: False
-      to: True
+      from: 'False'
+      to: 'True'
   action:
     - service: switch.turn_on
       data:
@@ -17,8 +17,8 @@
   trigger:
     - platform: state
       entity_id: sensor.hallway_away_mode
-      from: True
-      to: False
+      from: 'True'
+      to: 'False'
     - platform: state
       entity_id: group.two_of_us
       to: 'home'
