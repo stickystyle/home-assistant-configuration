@@ -1,16 +1,21 @@
 sensor.hallway_thermostat_hvac_state:
   hidden: true
+  homebridge_hidden: true
 sensor.hallway_thermostat_operation_mode:
   hidden: true
+  homebridge_hidden: true
 sensor.hallway_thermostat_temperature:
   friendly_name: 'Nest Temperature'
   hidden: true
+  homebridge_hidden: true
 sensor.hallway_thermostat_humidity:
   friendly_name: 'Nest Humidity'
   hidden: true
+  homebridge_hidden: true
 sensor.hallway_thermostat_target:
   friendly_name: 'Nest Target Temp'
   hidden: true
+  homebridge_hidden: true
 
 sensor.dark_sky_apparent_temperature:
   homebridge_hidden: true

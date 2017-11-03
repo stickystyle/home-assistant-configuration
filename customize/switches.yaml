@@ -5,5 +5,13 @@ switch.family_room_light:
 switch.bedroom_switch:
   homebridge_hidden: true
   hidden: true
-switch.flux:
+switch.interior_flux:
+  homebridge_hidden: true
+switch.family_room_detection:
+  homebridge_hidden: true
+switch.enable_kids_tracker:
+  homebridge_hidden: true
+switch.meds_have_been_taken:
+  homebridge_hidden: true
+switch.meds_reminder_enabled:
   homebridge_hidden: true

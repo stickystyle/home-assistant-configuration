@@ -2,8 +2,14 @@
   trigger:
     - platform: state
       entity_id: sensor.hallway_away_mode
-      from: 'False'
       to: 'True'
+    - platform: state
+      entity_id: group.two_of_us
+      to: 'not_home'
+  condition:
+    condition: state
+    entity_id: switch.family_room_camera
+    state: 'off'
   action:
     - service: switch.turn_on
       data:
