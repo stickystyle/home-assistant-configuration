@@ -2,10 +2,10 @@
   entities:
     light.hallway_light_1:
       state: on
-      brightness: 10
+      brightness_pct: 10
     light.hallway_light_2:
       state: on
-      brightness: 40
+      brightness_pct: 40
 
 - name: bedtime
   entities:
