@@ -1,1 +1,14 @@
-[]
+- action:
+  - data:
+      entity_id: scene.hallway_nightlight
+    service: service.light_turn_on
+  alias: TV Time
+  condition:
+  - condition: state
+    entity_id: input_select.tv_media_source
+    state: Plex
+  id: '1510004304840'
+  trigger:
+  - above: '0'
+    entity_id: ' sensor.plex'
+    platform: numeric_state
