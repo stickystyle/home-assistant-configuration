@@ -1,6 +1,6 @@
 - platform: tplink
   host: 192.168.10.139
-  name: Family Room Light
+  name: Family Room Lights
 # - platform: mqtt
 #   name: "Bedroom Switch"
 #   command_topic: "bedroom/switch1/set"
@@ -20,4 +20,3 @@
   lights:
     - light.headboard
     - light.fan_light
-    - light.closet

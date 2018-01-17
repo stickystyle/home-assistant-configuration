@@ -2,56 +2,54 @@
   - data:
       entity_id: scene.hallway_nightlight
     service: service.light_turn_on
+  - data:
+      entity_id: light.kitchen
+    service: light.turn_off
   alias: TV Time
   condition:
   - condition: state
     entity_id: input_select.tv_media_source
     state: Plex
+  - after: '20:30'
+    condition: time
   id: '1510004304840'
   trigger:
   - above: '0'
     entity_id: ' sensor.plex'
     platform: numeric_state
-
 - alias: Enable camera when gone
-  id: 'F6517913-C477-41B8-A24C-D011EBC5C1C6'
+  id: F6517913-C477-41B8-A24C-D011EBC5C1C6
   trigger:
-    - platform: state
-      entity_id: sensor.hallway_away_mode
-      to: 'True'
-    - platform: state
-      entity_id: group.two_of_us
-      to: 'not_home'
+  - platform: state
+    entity_id: sensor.hallway_away_mode
+    to: 'True'
+  - platform: state
+    entity_id: group.two_of_us
+    to: not_home
   condition:
     condition: state
     entity_id: switch.family_room_camera
     state: 'off'
   action:
-    - service: switch.turn_on
-      data:
-        entity_id: switch.family_room_camera
-    - service: notify.ios_ryans_iphone
-      data:
-        title: "Enabling Motion Detection"
-        message: "Nobody was home, so I turned on the camera"
-        
+  - service: switch.turn_on
+    data:
+      entity_id: switch.family_room_camera
+  - service: notify.ios_ryans_iphone
+    data:
+      title: Enabling Motion Detection
+      message: Nobody was home, so I turned on the camera
 - alias: Disable camera when home
-  id: 'E3B83D9A-7364-47BD-975E-AEEAD4D502E6'
+  id: E3B83D9A-7364-47BD-975E-AEEAD4D502E6
   trigger:
-    - platform: state
-      entity_id: sensor.hallway_away_mode
-      from: 'True'
-      to: 'False'
-    - platform: state
-      entity_id: group.two_of_us
-      to: 'home'
+  - entity_id: group.two_of_us
+    platform: state
+    to: home
   action:
-    - service: switch.turn_off
-      data:
-        entity_id: switch.family_room_camera
-        
+  - data:
+      entity_id: switch.family_room_camera
+    service: switch.turn_off
 - alias: Bedroom headboard on when home in evening
-  id: '6B7E6046-3B7F-4E2D-9350-9C934955F38D'
+  id: 6B7E6046-3B7F-4E2D-9350-9C934955F38D
   trigger:
     platform: numeric_state
     entity_id: sun.sun
@@ -62,14 +60,16 @@
     entity_id: sensor.hallway_away_mode
     state: 'False'
   action:
-    - service: light.turn_on
-      data:
-        entity_id: light.headboard
-        brightness: 255
-        rgb_color: [116,77,25]
-
+  - service: light.turn_on
+    data:
+      entity_id: light.headboard
+      brightness: 255
+      rgb_color:
+      - 116
+      - 77
+      - 25
 - alias: All interior lights off when gone
-  id: '942677A2-A163-444D-91D7-4C1297ABCD2E'
+  id: 942677A2-A163-444D-91D7-4C1297ABCD2E
   trigger:
     platform: state
     entity_id: sensor.hallway_away_mode
@@ -80,51 +80,48 @@
     entity_id: group.interior_lights
     state: 'on'
   action:
-    - service: light.turn_off
-      data:
-        entity_id: group.interior_lights
-    - service: media_player.turn_off
-      data:
-        entity_id: media_player.family_room_tv
-    - service: notify.ios_ryans_iphone
-      data:
-        title: "Turning off the lights"
-        message: "Nobody was home, so I turned off the lights"
-        
-- alias: 'Wakeup'
-  id: 'E5DF22B7-66A6-4CB5-A34B-86C782F489F0'
-  hide_entity: False
+  - service: light.turn_off
+    data:
+      entity_id: group.interior_lights
+  - service: media_player.turn_off
+    data:
+      entity_id: media_player.family_room_tv
+  - service: notify.ios_ryans_iphone
+    data:
+      title: Turning off the lights
+      message: Nobody was home, so I turned off the lights
+- alias: Wakeup
+  id: E5DF22B7-66A6-4CB5-A34B-86C782F489F0
+  hide_entity: false
   trigger:
     platform: time
-    at: "06:30:00"
+    at: 06:30:00
   condition:
     condition: time
     weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
   action:
     service: script.wakeup
-    
 - alias: Hallway in evening
-  id: 'DEAEAF5F-0A7A-458A-B687-156EDD415050'
+  id: DEAEAF5F-0A7A-458A-B687-156EDD415050
   trigger:
-    - platform: time
-      at: '20:30:00'
-    - platform: sun
-      event: sunset
+  - platform: time
+    at: '20:30:00'
+  - platform: sun
+    event: sunset
   condition:
     condition: state
     entity_id: sensor.hallway_away_mode
     state: 'False'
   action:
-    - service: scene.turn_on
-      entity_id: scene.hallway_nightlight
-      
+  - service: scene.turn_on
+    entity_id: scene.hallway_nightlight
 - alias: Exterior lights on in the evening
-  id: 'FE85804E-7FA1-467E-A682-822B62102CF5'
+  id: FE85804E-7FA1-467E-A682-822B62102CF5
   trigger:
     platform: numeric_state
     entity_id: sun.sun
@@ -135,13 +132,12 @@
     entity_id: sensor.hallway_away_mode
     state: 'False'
   action:
-    - service: light.turn_on
-      data:
-        entity_id: group.exterior_lights
-        brightness: 255
-        
+  - service: light.turn_on
+    data:
+      entity_id: group.exterior_lights
+      brightness: 255
 - alias: Exterior lights off in the morning
-  id: '78A6995E-DA64-42AD-A337-31F8271D5824'
+  id: 78A6995E-DA64-42AD-A337-31F8271D5824
   trigger:
     platform: numeric_state
     entity_id: sun.sun
@@ -152,26 +148,24 @@
     entity_id: sensor.hallway_away_mode
     state: 'False'
   action:
-    - service: light.turn_off
-      data:
-        entity_id: group.exterior_lights
-        
+  - service: light.turn_off
+    data:
+      entity_id: group.exterior_lights
 - alias: Update notifications
-  id: 'CC0BC582-6797-4159-AD29-779EE93782CC'
+  id: CC0BC582-6797-4159-AD29-779EE93782CC
   trigger:
-    - platform: state
-      entity_id: updater.updater
+  - platform: state
+    entity_id: updater.updater
   action:
     service: notify.ios_ryans_iphone
-    data_template: 
-      title: 'New Home Assistant Release'
-      message: "Home Assistant  {{ states.updater.updater.state }}  is now available."
-      
+    data_template:
+      title: New Home Assistant Release
+      message: Home Assistant  {{ states.updater.updater.state }}  is now available.
 - alias: A/C fan on in the morning
-  id: '3FEE6069-286B-48ED-AC86-38C19434F0CF'
+  id: 3FEE6069-286B-48ED-AC86-38C19434F0CF
   trigger:
     platform: time
-    at: '05:00:00'
+    at: 05:00:00
   condition:
     condition: state
     entity_id: sensor.hallway_away_mode
@@ -180,129 +174,141 @@
     service: climate.set_fan_mode
     data:
       entity_id: climate.ac
-      fan_mode: 'On' 
-      
+      fan_mode: 'On'
 - alias: Lights in the morning
-  id: '0E8B257C-5A7C-47B2-86B4-D0368FFE273F'
+  id: 0E8B257C-5A7C-47B2-86B4-D0368FFE273F
   trigger:
     platform: time
-    at: '06:15:00'
+    at: 06:15:00
   condition:
     condition: and
     conditions:
-      - condition: state
-        entity_id: sensor.hallway_away_mode
-        state: 'False'
-      - condition: time
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
+    - condition: state
+      entity_id: sensor.hallway_away_mode
+      state: 'False'
+    - condition: time
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
   action:
-    - service: light.turn_on
-      data:
-        entity_id: light.hallway
-        brightness: 45
-    - service: light.turn_on
-      data:
-        entity_id: light.couch
-        brightness: 45
-    - delay:
-        minutes: 15
-    - service: light.turn_on
-      data:
-        entity_id: light.hallway
-        brightness: 55
-    - service: light.turn_on
-      data:
-        entity_id: light.couch
-        brightness: 55
-        
+  - service: light.turn_on
+    data:
+      entity_id: light.hallway
+      brightness: 45
+  - service: light.turn_on
+    data:
+      entity_id: light.couch
+      brightness: 45
+  - delay:
+      minutes: 15
+  - service: light.turn_on
+    data:
+      entity_id: light.hallway
+      brightness: 55
+  - service: light.turn_on
+    data:
+      entity_id: light.couch
+      brightness: 55
 - alias: UPS off battery power
-  id: 'B422C7BD-BB9B-47B1-B9A5-F8D03477C437'
+  id: B422C7BD-BB9B-47B1-B9A5-F8D03477C437
   trigger:
-    - platform: state
-      entity_id: binary_sensor.ups_online_status
-      to: 'on'
+  - platform: state
+    entity_id: binary_sensor.ups_online_status
+    to: 'on'
   action:
-    - service: notify.ios_ryans_iphone
-      data:
-        title: "UPS off battery power"
-        message: "Power has been restored"
-        
+  - service: notify.ios_ryans_iphone
+    data:
+      title: UPS off battery power
+      message: Power has been restored
 - alias: UPS on battery power critical
-  id: '1D1CE8BE-B0C6-44C2-B122-501B8A0A763D'
+  id: 1D1CE8BE-B0C6-44C2-B122-501B8A0A763D
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.ups_time_left
-      below: 15
+  - platform: numeric_state
+    entity_id: sensor.ups_time_left
+    below: 15
   action:
-    - service: notify.ios_ryans_iphone
-      data:
-        title: "UPS battery power critical"
-        message: "15min remain of battery power, servers shutting down in 5min"
-        
+  - service: notify.ios_ryans_iphone
+    data:
+      title: UPS battery power critical
+      message: 15min remain of battery power, servers shutting down in 5min
 - alias: Request update from Ryans iPhone
-  id: 'ADAD1F28-1573-49C5-8182-1951886C4F71'
+  id: ADAD1F28-1573-49C5-8182-1951886C4F71
   trigger:
     platform: time
     at: '17:05:00'
   action:
     service: notify.ios_ryans_iphone
     data:
-      message: "request_location_update"
-      
+      message: request_location_update
 - alias: Ryan left work
-  id: 'A04F4FC7-1E37-4627-960E-98BBCB09F04C'
+  id: A04F4FC7-1E37-4627-960E-98BBCB09F04C
   trigger:
     platform: state
     entity_id: device_tracker.ryans_iphone
-    from: !secret zone_fli_name
+    from: Freight Logistics
   condition:
     condition: and
     conditions:
-      - condition: time
-        after: '16:55:00'
-        before: '17:45:00'
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
-      - condition: state
-        entity_id: binary_sensor.workday_sensor
-        state: 'on'
+    - condition: time
+      after: '16:55:00'
+      before: '17:45:00'
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
   action:
-    - service: notify.ios_christas_iphone
-      data:
-        title: "Left work"
-        message: "Ryan left work, should be home in {{ states.sensor.ryan_to_home.attributes.duration_in_traffic }}"
-        
+  - service: notify.ios_christas_iphone
+    data:
+      title: Left work
+      message: Ryan left work, should be home in {{ states.sensor.ryan_to_home.attributes.duration_in_traffic
+        }}
 - alias: Christa left work
-  id: 'D8026E1D-256E-43BF-ABB2-79BA8B0DD36D'
+  id: D8026E1D-256E-43BF-ABB2-79BA8B0DD36D
   trigger:
     platform: state
     entity_id: device_tracker.christas_iphone
-    from: !secret zone_salon_name
+    from: La Bella Salon
   condition:
     condition: and
     conditions:
-      - condition: time
-        after: '18:00:00'
-        before: '21:00:00'
-        weekday:
-          - wed
-          - thu
-          - fri
-          - sat
-      - condition: state
-        entity_id: binary_sensor.workday_sensor
-        state: 'on'
+    - condition: time
+      after: '18:00:00'
+      before: '21:00:00'
+      weekday:
+      - wed
+      - thu
+      - fri
+      - sat
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
   action:
-    - service: notify.ios_ryans_iphone
-      data:
-        title: "Left work"
-        message: "Christa left work, should be home in {{ states.sensor.christa_to_home.attributes.duration_in_traffic }}"
+  - service: notify.ios_ryans_iphone
+    data:
+      title: Left work
+      message: Christa left work, should be home in {{ states.sensor.christa_to_home.attributes.duration_in_traffic
+        }}
+- alias: Disable wakeup
+  id: 40162909-964F-4C97-AE69-255A2A9D4B68
+  trigger:
+  - platform: state
+    entity_id: light.headboard
+    to: 'off'
+  - platform: state
+    entity_id: light.fan_light
+    to: 'off'
+  condition:
+  - condition: state
+    entity_id: switch.wakeup
+    state: 'on'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.wakeup

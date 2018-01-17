@@ -31,3 +31,4 @@ check_config.sh
 
 usps_cache.sqlite
 homebridge/persist/
+homebridge/accessories/

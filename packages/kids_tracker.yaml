@@ -44,11 +44,9 @@ automation:
     trigger:
       - platform: state
         entity_id: sensor.catherines_backpack
-        to: 'family-room'
         from: 'away'
       - platform: state
         entity_id: sensor.tuckers_backpack
-        to: 'family-room'
         from: 'away'
     condition:
       condition: and
@@ -77,11 +75,9 @@ automation:
     trigger:
       - platform: state
         entity_id: sensor.tuckers_backpack
-        to: 'family-room'
         from: 'away'
       - platform: state
         entity_id: sensor.catherines_backpack
-        to: 'family-room'
         from: 'away'
     condition:
       condition: and

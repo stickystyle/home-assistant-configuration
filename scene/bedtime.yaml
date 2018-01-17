@@ -5,7 +5,7 @@
       brightness_pct: 10
     light.hallway_light_2:
       state: on
-      brightness_pct: 40
+      brightness_pct: 60
 
 - name: bedtime
   entities:
@@ -28,4 +28,8 @@
     light.hallway:
       state: off
     switch.bedroom_flux:
+      state: off
+    light.entryway:
+      state: off
+    light.kitchen:
       state: off

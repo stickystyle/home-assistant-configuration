@@ -21,12 +21,40 @@ updater:
   
 config:
 
+cloud:
+  alexa:
+    filter:
+      include_domains:
+        - light
+        - media_player
+      include_entities:
+        - scene.bedtime
+        - switch.family_room_lights
+        - media_player.family_room_tv
+      exclude_domains:
+        - media_player
+      exclude_entities:
+        - light.tucker_fan_light_1
+        - light.tucker_fan_light_2
+        - light.tucker_fan_light_3
+        - light.catherine_fan_light_1
+        - light.catherine_fan_light_2
+        - light.catherine_fan_light_3
+        - light.fan_light_1
+        - light.fan_light_2
+        - light.fan_light_3
+        - light.hallway_light_1
+        - light.hallway_light_2
+        - light.kitchen_fan_bulb_1
+        - light.kitchen_fan_bulb_2
+        - light.kitchen_fan_bulb_3
+
 map:
   
 discovery:
   ignore:
     - plex_mediaserver
-#    - ikea_tradfri
+    - ikea_tradfri
 
 history:
   exclude:
@@ -67,7 +95,7 @@ history:
       - group.bedroom_motion_control
       - group.bedroom_lights
       
-      - camera.living_room_cam
+      - camera.family_room
       
       - sun.sun
       
@@ -100,11 +128,15 @@ recorder:
 influxdb:
   host: 192.168.10.200
   port: 8086
+  max_retries: 10
+  retry_queue_limit: 100
 
 logger:
   default: warn
   logs:
     requests.packages.urllib3.connectionpool: critical
+    urllib3.exceptions.HeaderParsingError: error
+    urllib3.connectionpool: error
 
 logbook:
   exclude:
@@ -123,11 +155,15 @@ sun:
 
 zeroconf:
 
-#panel_iframe:
-#  kerberos:
-#    title: Kerberos
-#    icon: mdi:camera
-#    url: http://192.168.10.200:8078
+panel_iframe:
+  kerberos:
+    title: Kerberos
+    icon: mdi:camera
+    url: https://kerberos.theparrishfamily.net
+  ide:
+    title: IDE
+    icon: mdi:code-braces
+    url: https://homeide.theparrishfamily.net
   
 ios:
   push:
@@ -142,14 +178,14 @@ ios:
             destructive: yes
             behavior: 'default'
 
-emulated_hue:
-  type: alexa
-  host_ip: 192.168.10.200
-  expose_by_default: false
-  exposed_domains:
-    - light
-    - group
-    - media_player
+#emulated_hue:
+#  type: alexa
+#  host_ip: 192.168.10.200
+#  expose_by_default: false
+#  exposed_domains:
+#    - light
+#    - group
+#    - media_player
 
 mqtt:
   broker: 192.168.10.200
@@ -173,29 +209,35 @@ apcupsd:
   host: 192.168.10.200
   port: 3551
   
-#alert:
-#  ups_on_battery:
-#    name: UPS is on battery power
-#    entity_id: binary_sensor.ups_online_status
-#    state: 'off'
-#    repeat: 3
-#    notifiers:
-#      - ios_ryans_iphone
+alert:
+  ups_on_battery:
+    name: UPS is on battery power
+    entity_id: binary_sensor.ups_online_status
+    state: 'off'
+    repeat: 3
+    notifiers:
+      - ios_ryans_iphone
 
-#tradfri:
-#  host: 192.168.10.112
+tradfri:
+  host: 192.168.10.112
+  allow_tradfri_groups: true
 
-camera:
-  - platform: mjpeg
-    mjpeg_url: http://192.168.10.200:8889
-    name: family_room
-  - platform: usps
-    scan_interval: 30 
+#camera:
+#  - platform: mjpeg
+    #mjpeg_url: http://192.168.10.200:8889
+#    mjpeg_url: http://192.168.10.200:8090/monitoring1.mjpg
+#    name: family_room
+#  - platform: usps
+#    scan_interval: 30 
+  #- platform: ffmpeg
+  #  input: -rtsp_transport tcp -i "rtsp://USER:PASSWD@192.168.10.108:554/videoMain"
+  #  extra_arguments: -c copy
+  #  name: family_room
 
-image_processing:
-  - platform: dlib_face_detect
-    source:
-      - entity_id: camera.family_room
+#image_processing:
+#  - platform: dlib_face_detect
+#    source:
+ #     - entity_id: camera.family_room
 
 #microsoft_face:
 #  api_key: 04770e74c3004cae98314d1c93abdfd5
@@ -214,17 +256,21 @@ input_select:
     initial: Xfinity
     icon: mdi:television
 
-usps:
-  username: !secret sensor_usps_username
-  password: !secret sensor_usps_password
+# usps:
+#  username: !secret sensor_usps_username
+#  password: !secret sensor_usps_password
 
+light:
+  - platform: hue
+    host: 192.168.10.121
+    allow_hue_groups: true
 
 automation: !include automations.yaml
-#automation old: !include_dir_merge_list automation
+# automation old: !include_dir_merge_list automation
 group: !include groups.yaml
 # input_boolean: !include_dir_merge_named input_boolean
 # input_select: !include_dir_merge_list input_select
-light: !include_dir_merge_list light
+# light: !include_dir_merge_list light
 media_player: !include_dir_merge_list media_player
 notify: !include_dir_merge_list notify
 scene: !include_dir_merge_list scene

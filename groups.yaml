@@ -14,12 +14,14 @@ default_view:
   - camera.family_room
   - image_processing.dlib_face_family_room
   - switch.family_room_camera
+  - switch.family_room_lights
   name: default_view
 Interior Lights:
   view: true
   entities:
   - group.all_lights 
-  - switch.family_room_light
+  - switch.family_room_lights
+  - group.kitchen_light
 Bedroom:
   view: true
   entities:
@@ -38,6 +40,9 @@ System:
   - sensor.netdata
   - group.kids
   - group.all_automations
+  - group.transmission
+  - binary_sensor.watching_tv
+  - binary_sensor.someone_home
 Travel Times:
   view: true
   entities:
@@ -63,7 +68,7 @@ Exterior Lights:
 Family Room:
   view: false
   entities:
-  - light.couch
+  - light.entryway
   - switch.family_room_light
 Front Yard:
   entities:
@@ -88,3 +93,15 @@ FLI:
   entities:
   - sensor.fli_to_home
   - sensor.home_to_fli
+Kitchen Light:
+  entities:
+  - light.kitchen_fan_bulb_1
+  - light.kitchen_fan_bulb_2
+  - light.kitchen_fan_bulb_3
+Transmission:
+  entities:
+  - sensor.transmission_active_torrents
+  - sensor.transmission_down_speed
+  - sensor.transmission_status
+  - sensor.transmission_up_speed
+  - switch.transmission_turtle_mode

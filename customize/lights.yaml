@@ -9,26 +9,40 @@ light.fan_light_3:
   hidden: true
 light.fan_light:
   friendly_name: 'Bed Light'
-  emulated_hue_hidden: false
 light.front_door:
   friendly_name: 'Front Door Light'
-  emulated_hue_hidden: false
 light.back_door:
   friendly_name: 'Back Door Light'
-  emulated_hue_hidden: false
-light.couch:
-  friendly_name: 'Couch Light'
-  emulated_hue_hidden: false
 light.headboard:
-  emulated_hue_hidden: false
   friendly_name: 'Headboard'
 light.closet:
-  emulated_hue_hidden: false
   friendly_name: 'Closet'
+light.hue_tuckers_room:
+  friendly_name: 'Tuckers Room'
+light.hue_catherines_room:
+  friendly_name: 'Catherines Room'
 light.hallway_light_1:
   homebridge_hidden: true
 light.hallway_light_2:
   homebridge_hidden: true
 light.hallway:
   friendly_name: 'Hallway'
-  emulated_hue_hidden: false
+light.kitchen_fan_bulb_1:
+  homebridge_hidden: true
+  hidden: true
+light.kitchen_fan_bulb_2:
+  homebridge_hidden: true
+  hidden: true
+light.kitchen_fan_bulb_3:
+  homebridge_hidden: true
+  hidden: true
+light.kitchen:
+  homebridge_hidden: false
+light.huebackyard:
+  homebridge_hidden: true
+  hidden: true
+light.entryway:
+  homebridge_hidden: false
+light.tradfri_group:
+  homebridge_hidden: true
+  hidden: true

@@ -1,0 +1,12 @@
+- name: TV Time
+  entities:
+    group.family_room:
+      state: off
+    light.laundry_room:
+      state: off
+    light.hallway:
+      state: off
+    light.entryway:
+      state: off
+    light.kitchen:
+      state: off

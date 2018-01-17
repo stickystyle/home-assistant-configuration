@@ -23,6 +23,7 @@ automation:
         hours: 2
     action:
       service: input_boolean.turn_off
+      entity_id: input_boolean.meds_taken
   
   - alias: Mark meds as taken from notification
     trigger:
@@ -37,7 +38,7 @@ automation:
   - alias: Meds have not been taken weekday
     trigger:
       platform: time
-      at: '07:24:00'
+      at: '07:15:00'
     condition:
       condition: and
       conditions:
@@ -74,7 +75,7 @@ automation:
   - alias: Meds have not been taken weekend
     trigger:
       platform: time
-      at: '08:45:00'
+      at: '09:45:00'
     condition:
       condition: and
       conditions:

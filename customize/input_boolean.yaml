@@ -1,0 +1,4 @@
+input_boolean.meds_taken:
+  homebridge_hidden: true
+input_bookean.kids_tracker:
+  homebridge_hidden: true
