@@ -35,6 +35,7 @@ group:
     entities:
       - sensor.tuckers_backpack
       - sensor.catherines_backpack
+      - input_boolean.kids_tracker
 
 # Not going to have an automation to turn away_mode on with these
 # as I don't think it would be reliabe enough. Anyways, the kids will
@@ -44,10 +45,10 @@ automation:
     trigger:
       - platform: state
         entity_id: sensor.catherines_backpack
-        from: 'away'
+        from: 'not_home'
       - platform: state
         entity_id: sensor.tuckers_backpack
-        from: 'away'
+        from: 'not_home'
     condition:
       condition: and
       conditions:
@@ -75,10 +76,10 @@ automation:
     trigger:
       - platform: state
         entity_id: sensor.tuckers_backpack
-        from: 'away'
+        from: 'not_home'
       - platform: state
         entity_id: sensor.catherines_backpack
-        from: 'away'
+        from: 'not_home'
     condition:
       condition: and
       conditions:
