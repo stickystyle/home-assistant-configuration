@@ -23,31 +23,30 @@ config:
 
 cloud:
   alexa:
+    entity_config:
+      media_player.family_room_tv:
+        name: 'TV'
+      switch.family_room_lights:
+        name: 'Family Room Lights'
+        display_categories: LIGHT
     filter:
-      include_domains:
-        - light
-        - media_player
       include_entities:
         - scene.bedtime
         - switch.family_room_lights
         - media_player.family_room_tv
-      exclude_domains:
-        - media_player
-      exclude_entities:
-        - light.tucker_fan_light_1
-        - light.tucker_fan_light_2
-        - light.tucker_fan_light_3
-        - light.catherine_fan_light_1
-        - light.catherine_fan_light_2
-        - light.catherine_fan_light_3
-        - light.fan_light_1
-        - light.fan_light_2
-        - light.fan_light_3
-        - light.hallway_light_1
-        - light.hallway_light_2
-        - light.kitchen_fan_bulb_1
-        - light.kitchen_fan_bulb_2
-        - light.kitchen_fan_bulb_3
+        - light.hue_catherines_room
+        - light.hue_tuckers_room
+        - light.back_door
+        - light.fan_light
+        - light.entryway
+        - light.front_door
+        - light.kitchen
+        - light.closet
+        - light.headboard
+        - light.hallway
+        - light.laundry_room
+        - light.backyard
+        - light.huebedroom
 
 map:
   
@@ -82,9 +81,13 @@ history:
       - binary_sensor.dark_sky_cloudy
       
       - light.huebedroom
+      - light.hallway_light_1
+      - light.hallway_light_2
       
       - group.living_room_motion_detection
       - group.all_switches
+      - group.all_automations
+      - group.all_lights
       - group.climate
       - group.kids
       - group.front_yard
@@ -94,6 +97,7 @@ history:
       - group.evening_scenes
       - group.bedroom_motion_control
       - group.bedroom_lights
+      - group.meds_reminder
       
       - camera.family_room
       
@@ -107,12 +111,13 @@ history:
       - binary_sensor.ac_thermostat_is_using_emergency_heat
       - binary_sensor.ac_thermostat_online
       - binary_sensor.bedroom_motion
+      - binary_sensor.workday_sensor
       
       - switch.bedroom_flux
       - switch.interior_flux
       
-      - input_boolean.media_select_directv
-      
+      - input_boolean.kids_tracker
+
       - input_select.tv_media_source
       
       - input_slider.bedroom_motion_timeout
@@ -121,6 +126,9 @@ history:
       - input_slider.bedroom_motion_start_min
       - input_slider.bedroom_motion_stop_hour
       - input_slider.bedroom_motion_stop_min
+      
+      - media_player.family_room
+      - media_player.spotify
 
 recorder:
   db_url: !secret recorder_db_url
@@ -129,7 +137,6 @@ influxdb:
   host: 192.168.10.200
   port: 8086
   max_retries: 10
-  retry_queue_limit: 100
 
 logger:
   default: warn
@@ -150,16 +157,13 @@ logbook:
       - group.bedroom_lights
       - sensor.dark_sky_summary
       - image_processing.dlib_face_family_room
+      - image_processing.opencv_family_room
 
 sun:
 
 zeroconf:
 
 panel_iframe:
-  kerberos:
-    title: Kerberos
-    icon: mdi:camera
-    url: https://kerberos.theparrishfamily.net
   ide:
     title: IDE
     icon: mdi:code-braces
@@ -178,28 +182,11 @@ ios:
             destructive: yes
             behavior: 'default'
 
-#emulated_hue:
-#  type: alexa
-#  host_ip: 192.168.10.200
-#  expose_by_default: false
-#  exposed_domains:
-#    - light
-#    - group
-#    - media_player
-
 mqtt:
   broker: 192.168.10.200
   port: 1883
   client_id: home-assistant-1
   discovery: true
-
-# device_tracker:
-#  - platform: nmap_tracker
-#    hosts: 192.168.10.1/24
-#    track_new_devices: no
-#    exclude:
-#      - 192.168.10.200
-#      - 192.168.10.122
 
 nest:
   client_id: !secret nest_client_id
@@ -221,23 +208,31 @@ alert:
 tradfri:
   host: 192.168.10.112
   allow_tradfri_groups: true
+  
+  
+device_tracker:
+  - platform: asuswrt
+    host: 192.168.10.1
+    username: !secret asuswrt_user
+    password: !secret asuswrt_passwd
+    new_device_defaults:
+      track_new_devices: False
+      hide_if_away: False
+  
+ffmpeg:
 
-#camera:
-#  - platform: mjpeg
-    #mjpeg_url: http://192.168.10.200:8889
-#    mjpeg_url: http://192.168.10.200:8090/monitoring1.mjpg
-#    name: family_room
-#  - platform: usps
-#    scan_interval: 30 
-  #- platform: ffmpeg
-  #  input: -rtsp_transport tcp -i "rtsp://USER:PASSWD@192.168.10.108:554/videoMain"
-  #  extra_arguments: -c copy
-  #  name: family_room
+camera:
+  - platform: mjpeg
+    mjpeg_url: http://192.168.10.200:8081
+    name: family_room
 
-#image_processing:
-#  - platform: dlib_face_detect
-#    source:
- #     - entity_id: camera.family_room
+image_processing:
+  - platform: opencv
+    source:
+      - entity_id: camera.family_room
+  - platform: dlib_face_detect
+    source:
+      - entity_id: camera.family_room
 
 #microsoft_face:
 #  api_key: 04770e74c3004cae98314d1c93abdfd5
@@ -268,7 +263,7 @@ light:
 automation: !include automations.yaml
 # automation old: !include_dir_merge_list automation
 group: !include groups.yaml
-# input_boolean: !include_dir_merge_named input_boolean
+#input_boolean: !include input_boolean.yaml
 # input_select: !include_dir_merge_list input_select
 # light: !include_dir_merge_list light
 media_player: !include_dir_merge_list media_player
